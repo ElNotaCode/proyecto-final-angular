@@ -45,7 +45,8 @@ import { FooterComponent } from './public/footer/footer.component';
     HomeComponent,
     AboutComponent,
     CandidaturaComponent,
-    FooterComponent
+    FooterComponent,
+    AsideComponent
   ],
   imports: [
     BrowserModule,
