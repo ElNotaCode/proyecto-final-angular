@@ -47,7 +47,11 @@ import { NavComponent } from './public/nav/nav.component';
     AboutComponent,
     CandidaturaComponent,
     FooterComponent,
+<<<<<<< HEAD
+    AsideComponent
+=======
     NavComponent
+>>>>>>> master
   ],
   imports: [
     BrowserModule,
