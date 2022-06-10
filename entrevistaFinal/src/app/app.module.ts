@@ -22,6 +22,7 @@ import { HomeComponent } from './public/home/home.component';
 import { AboutComponent } from './public/about/about.component';
 import { CandidaturaComponent } from './public/candidatura/candidatura.component';
 import { FooterComponent } from './public/footer/footer.component';
+import { NavComponent } from './public/nav/nav.component';
 
 
 @NgModule({
@@ -46,7 +47,11 @@ import { FooterComponent } from './public/footer/footer.component';
     AboutComponent,
     CandidaturaComponent,
     FooterComponent,
+<<<<<<< HEAD
     AsideComponent
+=======
+    NavComponent
+>>>>>>> master
   ],
   imports: [
     BrowserModule,
