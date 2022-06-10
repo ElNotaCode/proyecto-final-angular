@@ -18,6 +18,10 @@ import { TableCandidatePositionComponent } from './admin/components/listas/table
 import { TablePositionTableComponent } from './admin/components/listas/table-position-table/table-position-table.component';
 import { TableHrPositionComponent } from './admin/components/listas/table-hr-position/table-hr-position.component';
 import { TableHrUserComponent } from './admin/components/listas/table-hr-user/table-hr-user.component';
+import { HomeComponent } from './public/home/home.component';
+import { AboutComponent } from './public/about/about.component';
+import { CandidaturaComponent } from './public/candidatura/candidatura.component';
+import { FooterComponent } from './public/footer/footer.component';
 
 
 @NgModule({
@@ -37,7 +41,11 @@ import { TableHrUserComponent } from './admin/components/listas/table-hr-user/ta
     TableCandidatePositionComponent,
     TablePositionTableComponent,
     TableHrPositionComponent,
-    TableHrUserComponent
+    TableHrUserComponent,
+    HomeComponent,
+    AboutComponent,
+    CandidaturaComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
