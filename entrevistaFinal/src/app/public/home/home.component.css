@@ -1,0 +1,88 @@
+/*Home*/
+
+.bg-bostrap{
+  background-color: #7752BE;
+}
+
+.bg-java{
+  background-color: #FAB005;
+}
+
+.bg-angular{
+  background-color: #F03E3D;
+}
+
+.bg-mysql{
+  background-color: #4DADF7;
+}
+
+.bg-btn-blue{
+  background-color: #439FF2;
+  border: none;
+  color: white;
+}
+
+.bg-btn-white{
+  background-color: #fff;
+  border-color: #439FF2;
+  color:black
+}
+
+/*candidate*/
+
+.call-to-action {
+  position: relative;
+  background-color: #343a40;
+ /* background: url("../assets/img/bg-masthead.jpg") no-repeat center center;*/
+  background-size: cover;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+.call-to-action:before {
+  content: "";
+  position: absolute;
+  background-color: #1c375e;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+}
+
+
+header.masthead {
+  position: relative;
+  background-color: #343a40;
+ /* background: url("../assets/img/bg-masthead.jpg") no-repeat center center;*/
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+header.masthead:before {
+  content: "";
+  position: absolute;
+  background-color: #1c375e;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+}
+header.masthead h1, header.masthead .h1 {
+  font-size: 2rem;
+}
+@media (min-width: 768px) {
+  header.masthead {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+  header.masthead h1, header.masthead .h1 {
+    font-size: 3rem;
+  }
+}
+
+.center{
+  text-align: center;
+  padding-bottom: 5%;
+
+}
