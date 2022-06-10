@@ -1,0 +1,11 @@
+.bg-btn-blue{
+  background-color: #439FF2;
+  border: none;
+  color: white;
+}
+
+.bg-btn-white{
+  background-color: #fff;
+  border-color: #439FF2;
+  color:black
+}
