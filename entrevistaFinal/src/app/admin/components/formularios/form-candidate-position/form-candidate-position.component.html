@@ -1,1 +1,80 @@
-<p>form-candidate-position works!</p>
+<div class="container text">
+  <p class="h3 my-3">Crear Candidate-Position</p>
+  <div class="my-3 p-3 bg-body rounded shadow-sm">
+    <!--HRUSER POSITION-->
+    <form>
+      <!--SELECT FK HRUSER-->
+      <div class="form-group my-3">
+        <label for="fkCandidate">Seleccionar Candidate:</label>
+        <select class="form-control" id="fkCandidate" name="fkCandidate">
+          <option value="">ID1</option>
+        </select>
+      </div>
+      <!--VALIDAR FK HRUSER-->
+      <div *ngIf="validarFkCandidate == true" class="row my-3">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-10">
+          <p class="h6 text-danger">Tienes que seleccionar a un Candidate.</p>
+        </div>
+      </div>
+      <!--SELECT FK POSITION -->
+      <div class="form-group my-3">
+        <label for="fkPosition">Seleccionar Position:</label>
+        <select class="form-control" id="fkPosition" name="fkPosition">
+          <option value="">ID1</option>
+        </select>
+      </div>
+      <!--VALIDAR FK POSITION-->
+      <div *ngIf="validarFkPosition == true" class="row my-3">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-10">
+          <p class="h6 text-danger">Tienes que seleccionar una Position.</p>
+        </div>
+      </div>
+      <!--DATEPICKER-->
+      <div class="row my-3">
+        <div class="col-sm-2">Fecha de Registro:</div>
+        <div class="col-sm-10">
+          <div class="input-group date" data-provide="datepicker">
+            <input
+              id="fechaRegistro"
+              name="fechaRegistro"
+              class="form-control"
+              type="date"
+            />
+          </div>
+        </div>
+      </div>
+      <!--DATEPICKER-->
+      <div class="row my-3">
+        <div class="col-sm-2">Fecha de Examen:</div>
+        <div class="col-sm-10">
+          <div class="input-group date" data-provide="datepicker">
+            <input
+              id="fechaExamen"
+              name="fechaExamen"
+              class="form-control"
+              type="date"
+            />
+          </div>
+        </div>
+      </div>
+      <!--DATEPICKER-->
+      <div class="row my-3">
+        <div class="col-sm-2">Fecha de Entrega:</div>
+        <div class="col-sm-10">
+          <input
+            id="fechaEntrega"
+            name="fechaEntrega"
+            class="form-control"
+            type="date"
+          />
+        </div>
+      </div>
+      <!--BUTTON-->
+      <button class="btn btn-primary mt-4" (click)="enviarFormulario()">
+        Enviar
+      </button>
+    </form>
+  </div>
+</div>
