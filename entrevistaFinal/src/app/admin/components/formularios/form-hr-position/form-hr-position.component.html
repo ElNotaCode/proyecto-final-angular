@@ -1,1 +1,40 @@
-<p>form-hr-position works!</p>
+<div class="container text">
+  <p class="h3 my-3">Crear HrUser-Position</p>
+  <div class="my-3 p-3 bg-body rounded shadow-sm">
+    <!--HRUSER POSITION-->
+    <form>
+      <!--SELECT FK HRUSER-->
+      <div class="form-group my-3">
+        <label for="fkHrUser">Seleccionar HrUser:</label>
+        <select class="form-control" id="fkHrUser" name="fkHrUser">
+          <option value="">ID1</option>
+        </select>
+      </div>
+      <!--VALIDAR FK HRUSER-->
+      <div *ngIf="validarFkHrUser == true" class="row my-3">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-10">
+          <p class="h6 text-danger">Tienes que seleccionar a un HrUser.</p>
+        </div>
+      </div>
+      <!--SELECT FK POSITION -->
+      <div class="form-group my-3">
+        <label for="fkPosition">Seleccionar Position:</label>
+        <select class="form-control" id="fkPosition" name="fkPosition">
+          <option value="">ID1</option>
+        </select>
+      </div>
+      <!--VALIDAR FK POSITION-->
+      <div *ngIf="validarFkPosition == true" class="row my-3">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-10">
+          <p class="h6 text-danger">Tienes que seleccionar una Position.</p>
+        </div>
+      </div>
+      <!--BUTTON-->
+      <button class="btn btn-primary mt-4" (click)="enviarFormulario()">
+        Enviar
+      </button>
+    </form>
+  </div>
+</div>
