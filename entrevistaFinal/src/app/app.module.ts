@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,7 +25,6 @@ import { CandidaturaComponent } from './public/candidatura/candidatura.component
 import { FooterComponent } from './public/footer/footer.component';
 import { NavComponent } from './public/nav/nav.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,13 +48,10 @@ import { NavComponent } from './public/nav/nav.component';
     CandidaturaComponent,
     FooterComponent,
     AsideComponent,
-    NavComponent
+    NavComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
