@@ -10,7 +10,11 @@ export class FormHrPositionComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  username: string = '';
+  fkHrUser: any;
+  fkPosition: any;
 
-  validarUsername: boolean = true;
+  validarFkHrUser: boolean = true;
+  validarFkPosition: boolean = true;
+
+  enviarFormulario() {}
 }
