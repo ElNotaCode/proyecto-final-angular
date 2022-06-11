@@ -13,4 +13,6 @@ export class FormHrUserComponent implements OnInit {
   username: string = '';
 
   validarUsername: boolean = true;
+
+  enviarFormulario() {}
 }
