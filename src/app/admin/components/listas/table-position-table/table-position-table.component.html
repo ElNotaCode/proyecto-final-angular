@@ -11,19 +11,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr *ngFor="let position of positions"  >
           <td>
-            <p class="fw-normal mb-1">1</p>
+            <p class="fw-normal mb-1">{{position.id}}</p>
           </td>
           <td>
-            <div class="d-flex align-items-center">
-              <div class="ms-3">
-                <p class="fw-bold mb-1">John Doe</p>
-              </div>
-            </div>
+            <p class="fw-normal mb-1">{{position.title}}</p>
           </td>
           <td>
-            <p class="fw-normal mb-1">Dec</p>
+            <p class="fw-normal mb-1">{{position.description}}</p>
           </td>
           <td>
             <button type="button" class="btn btn-success"><i class="bx bx-pencil"  aria-hidden="true"></i>
