@@ -45,11 +45,4 @@ export class SkillService {
   deleteSkill(id: any): Observable<any> {
     return this.httpClient.delete('${apiUrl}/${id}');
   }
-
-  //Funcionalidades extras
-
-  //filterByName() filtrará por un nombre que podemos introducir en un buscador
-  filterByName(skill_name: string): Observable<any> {
-    return this.httpClient.delete('${apiUrl}/${skill_name}');
-  }
 }
