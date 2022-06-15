@@ -11,19 +11,19 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr *ngFor="let hrPosition of hrPositions" >
           <td>
-            <p class="fw-normal mb-1">1</p>
+            <p class="fw-normal mb-1">{{hrPosition.id}}</p>
           </td>
           <td>
             <div class="d-flex align-items-center">
               <div class="ms-3">
-                <p class="fw-bold mb-1">Johan</p>
+                <p class="fw-bold mb-1">{{hrPosition.fk_id_user.username}}</p>
               </div>
             </div>
           </td>
           <td>
-            <p class="fw-normal mb-1">FullStack</p>
+            <p class="fw-normal mb-1">{{hrPosition.fk_id_position.title}}</p>
           </td>
           <td>
             <button type="button" class="btn btn-success"><i class="bx bx-pencil"  aria-hidden="true"></i>
