@@ -11,14 +11,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr *ngFor="let hrUser of hrUsers">
           <td>
-            <p class="fw-normal mb-1">1</p>
+            <p class="fw-normal mb-1">{{hrUser.id_user}}</p>
           </td>
           <td>
             <div class="d-flex align-items-center">
               <div class="ms-3">
-                <p class="fw-bold mb-1">John Doe</p>
+                <p class="fw-bold mb-1">{{hrUser.username}}</p>
               </div>
             </div>
           </td>
