@@ -16,7 +16,7 @@ export class FormSkillComponent implements OnInit {
 
   //objeto de la skill
   skill = {
-    nombreSkill: '',
+    skill_name: '',
   };
 
   //esta variable indicará que se tiene que introducir un nombre válido
@@ -25,25 +25,24 @@ export class FormSkillComponent implements OnInit {
   //declaramos esta función en void
   addSkill(): void {
     const data = {
-      nombreSkill: this.skill.nombreSkill,
+      skill_name: this.skill.skill_name,
     };
 
     //control
-    if (!data.nombreSkill) {
+    if (!data.skill_name) {
       //mostramos el mensaje de validación
       this.validarNombre = true;
       //importante poner el return para que pare la función
       return;
     } else {
-      this.skillService.createSkill(data).subscribe(
-        (response) => {
+      this.skillService.createSkill(data).subscribe({
+        next: (response) => {
           console.log(response);
-          this.isSkillAdded = true;
         },
-        (error) => {
-          console.log(error);
-        }
-      );
+        error: (err) => {
+          console.log(err.error.msg);
+        },
+      });
     }
   }
 
@@ -53,7 +52,7 @@ export class FormSkillComponent implements OnInit {
     this.isSkillAdded = false;
 
     this.skill = {
-      nombreSkill: '',
+      skill_name: '',
     };
   }
 }
