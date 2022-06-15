@@ -25,6 +25,7 @@ import { AboutComponent } from './public/about/about.component';
 import { CandidaturaComponent } from './public/candidatura/candidatura.component';
 import { FooterComponent } from './public/footer/footer.component';
 import { NavComponent } from './public/nav/nav.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
