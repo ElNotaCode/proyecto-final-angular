@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { AsideComponent } from './admin/aside/aside.component';
 import { FormSkillComponent } from './admin/components/formularios/form-skill/form-skill.component';
@@ -24,7 +25,6 @@ import { AboutComponent } from './public/about/about.component';
 import { CandidaturaComponent } from './public/candidatura/candidatura.component';
 import { FooterComponent } from './public/footer/footer.component';
 import { NavComponent } from './public/nav/nav.component';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [

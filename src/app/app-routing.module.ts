@@ -5,10 +5,6 @@ import { TableSkillComponent } from './admin/components/listas/table-skill/table
 
 const routes: Routes = [
   {
-    path: 'admin/dashboard',
-    component: AsideComponent,
-  },
-  {
     path: 'skills',
     component: TableSkillComponent,
   },
