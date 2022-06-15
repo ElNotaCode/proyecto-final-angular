@@ -27,22 +27,22 @@ export class CandidateService {
   //C
   //createSkll, se le pasa un objeto skill por parametro al que
   //llamamos data y le decimos que es de tipo any
-  createCandidates(data: any): Observable<any> {
+  createCandidate(data: any): Observable<any> {
     return this.httpClient.post(apiUrl, data);
   }
 
   //R
-  readCandidates(id: any): Observable<any> {
+  readCandidate(id: any): Observable<any> {
     return this.httpClient.get('${apiUrl}/${id}');
   }
 
   //U
-  updateCandidates(id: any, data: any): Observable<any> {
+  updateCandidate(id: any, data: any): Observable<any> {
     return this.httpClient.put('${apiUrl}/${id}', data);
   }
 
   //D
-  deleteCandidates(id: any): Observable<any> {
+  deleteCandidate(id: any): Observable<any> {
     return this.httpClient.delete('${apiUrl}/${id}');
   }
 }
