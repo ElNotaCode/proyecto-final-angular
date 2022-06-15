@@ -36,6 +36,38 @@ const routes: Routes = [
     component: TableCandidateComponent,
   },
   {
+    path: 'admin/dashboard',
+    component: AsideComponent,
+  },
+  {
+    path: 'admin',
+    component: AsideComponent,
+
+    children:[
+
+      {
+        path: 'skill',
+        component: TableSkillComponent
+      },
+      {
+        path: 'candidate',
+        component: TableSkillComponent
+      },
+      //esto no va hay que mirarlo..
+      {
+        path: '**',
+        component: AsideComponent,
+      }
+
+    ]
+
+  },
+  {
+
+    path: 'admin/skills',
+    component: TableSkillComponent,
+  },
+  {
     path: '**',
     component: HomeComponent,
   },
