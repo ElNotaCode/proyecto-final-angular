@@ -13,25 +13,25 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr *ngFor="candidateSkill of candidateSkills" >
           <td>
-            <p class="fw-normal mb-1">1</p>
+            <p class="fw-normal mb-1">{{candidateSkills.id_candidate_skill}}</p>
           </td>
           <td>
             <div class="d-flex align-items-center">
               <div class="ms-3">
-                <p class="fw-bold mb-1">John Doe</p>
+                <p class="fw-bold mb-1">{{candidateSkills.fk_id_candidate}}</p>
               </div>
             </div>
           </td>
           <td>
-            <p class="fw-normal mb-1">Java</p>
+            <p class="fw-normal mb-1">{{candidateSkills.fk_id_skill}}</p>
           </td>
           <td>
-            <p class="fw-normal mb-1">5</p>
+            <p class="fw-normal mb-1">{{candidateSkills.value_number}}</p>
           </td>
           <td>
-            <p class="fw-normal mb-1">Pesimo</p>
+            <p class="fw-normal mb-1">{{candidateSkills.notes}}</p>
           </td>
           <td>
             <button type="button" class="btn btn-success"><i class="bx bx-pencil"  aria-hidden="true"></i>
