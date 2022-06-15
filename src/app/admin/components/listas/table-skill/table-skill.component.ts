@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 //importamos el servicio relacionado con el componente
-import { SkillService } from 'src/app/services/s-skill/skill.service';
+import { SkillService } from 'src/app/admin/services/s-skill/skill.service';
 
 /**
  * @Author Eloi Martorell Martín
