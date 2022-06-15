@@ -1,4 +1,5 @@
-<main class="container text ">
+<main class="container text">
+  <!--TODO: Añadir *ngIf !data-->
   <p class="h3 my-3">Lista Skill</p>
   <div class="my-3 p-3 bg-body rounded shadow-sm">
     <table class="table align-middle mb-0 bg-white">
@@ -10,21 +11,24 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr *ngFor="let skill of skills">
           <td>
-            <p class="fw-normal mb-1">1</p>
+            <p class="fw-normal mb-1">{{ skill.id_skill }}</p>
           </td>
           <td>
             <div class="d-flex align-items-center">
               <div class="ms-3">
-                <p class="fw-bold mb-1">John Doe</p>
+                <p class="fw-bold mb-1">{{ skill.skill_name }}</p>
               </div>
             </div>
           </td>
           <td>
-            <button type="button" class="btn btn-success"><i class="bx bx-pencil"  aria-hidden="true"></i>
+            <button type="button" class="btn btn-success">
+              <i class="bx bx-pencil" aria-hidden="true"></i>
             </button>
-            <button type="button" class="btn btn-danger"><i class="bx bx-trash " aria-hidden="true"></i></button>
+            <button type="button" class="btn btn-danger">
+              <i class="bx bx-trash" aria-hidden="true"></i>
+            </button>
           </td>
         </tr>
       </tbody>
