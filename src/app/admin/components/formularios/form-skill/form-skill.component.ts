@@ -1,20 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { SkillService } from 'src/app/admin/services/s-skill/skill.service';
 
+/**
+ * @Author Eloi Martorell Martin
+ */
+
 @Component({
   selector: 'app-form-skill',
   templateUrl: './form-skill.component.html',
   styleUrls: ['./form-skill.component.css'],
 })
 export class FormSkillComponent implements OnInit {
+  //Importante declarar el service en el parametro del constructor
   constructor(private skillService: SkillService) {}
 
   ngOnInit(): void {}
 
-  //esta variable se usa para indicar que se ha creado la skill
+  //esta variable se usa para indicar que se ha creado la skill inicializamos en FALSE
   isSkillAdded = false;
 
-  //objeto de la skill
+  //objeto de la tabla
   skill = {
     skill_name: '',
   };
@@ -24,10 +29,9 @@ export class FormSkillComponent implements OnInit {
 
   //declaramos esta función en void
   addSkill(): void {
-    const data = {
+    let data = {
       skill_name: this.skill.skill_name,
     };
-
     //control
     if (!data.skill_name) {
       //mostramos el mensaje de validación
@@ -37,7 +41,9 @@ export class FormSkillComponent implements OnInit {
     } else {
       this.skillService.createSkill(data).subscribe({
         next: (response) => {
+          //console log para mirar si se ha mandado bien
           console.log(response);
+          this.isSkillAdded = true;
         },
         error: (err) => {
           console.log(err.error.msg);
