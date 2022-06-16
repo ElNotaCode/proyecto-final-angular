@@ -35,9 +35,9 @@ export class TableSkillComponent implements OnInit {
   }
 
   //Delete
-  deleteSkill(currentSkill: any) {
+  deleteSkill(id: any) {
     //TODO: Avisos estas seguro? si no
-    this.skillService.deleteSkill(currentSkill).subscribe((response) => {
+    this.skillService.deleteSkill(id).subscribe((response) => {
       console.log(response);
     });
   }
