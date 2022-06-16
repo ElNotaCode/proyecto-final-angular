@@ -1,7 +1,7 @@
 <div class="container text">
-  <p class="h3 my-3">Crear Skill</p>
-  <div class="my-3 p-3 bg-body rounded shadow-sm">
+  <div class="my-3 p-3 bg-body rounded shadow-sm" *ngIf="!isSkillAdded">
     <!--SKILL-->
+    <p class="h3 my-3">Crear Skill</p>
     <form>
       <!--TEXT NOMBRE-->
       <div class="form-group row mt-4">
@@ -15,23 +15,27 @@
             type="text"
             class="form-control"
             id="nombreSkill"
-            name="nombreSkill"
+            name="skill.nombreSkill"
             placeholder="Introduce el nombre de la Skill"
-            [(ngModel)]="nombreSkill"
+            [(ngModel)]="skill.skill_name"
           />
         </div>
       </div>
       <!--VALIDAR NOMBRE-->
-      <div *ngIf="validarNombre == true" class="row my-3">
+      <div *ngIf="validarNombre" class="row my-3">
         <div class="col-sm-2"></div>
         <div class="col-sm-10">
           <p class="h6 text-danger">Introduce un nombre para la Skill.</p>
         </div>
       </div>
       <!--BUTTON-->
-      <button class="btn btn-primary mt-4" (click)="enviarFormulario()">
-        Enviar
-      </button>
+      <button class="btn btn-primary mt-4" (click)="addSkill()">Enviar</button>
     </form>
+  </div>
+  <div class="my-3 p-3 bg-body rounded shadow-sm" *ngIf="isSkillAdded">
+    <p class="h3 my-3">Skill succefully added!</p>
+    <button class="btn btn-primary mt-4" (click)="newSkill()">
+      Crear otra skill
+    </button>
   </div>
 </div>

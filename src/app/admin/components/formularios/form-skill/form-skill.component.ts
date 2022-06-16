@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { SkillService } from 'src/app/admin/services/s-skill/skill.service';
+
+/**
+ * @Author Eloi Martorell Martin
+ */
 
 @Component({
   selector: 'app-form-skill',
@@ -6,14 +11,54 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form-skill.component.css'],
 })
 export class FormSkillComponent implements OnInit {
-  constructor() {}
+  //Importante declarar el service en el parametro del constructor
+  constructor(private skillService: SkillService) {}
 
   ngOnInit(): void {}
 
-  nombreSkill: string = '';
-  validarNombre: boolean = true;
+  //esta variable se usa para indicar que se ha creado la skill inicializamos en FALSE
+  isSkillAdded = false;
 
-  enviarFormulario() {
-    alert('Este botón no envia nada.');
+  //objeto de la tabla
+  skill = {
+    skill_name: '',
+  };
+
+  //esta variable indicará que se tiene que introducir un nombre válido
+  validarNombre: boolean = false;
+
+  //declaramos esta función en void
+  addSkill(): void {
+    let data = {
+      skill_name: this.skill.skill_name,
+    };
+    //control
+    if (!data.skill_name) {
+      //mostramos el mensaje de validación
+      this.validarNombre = true;
+      //importante poner el return para que pare la función
+      return;
+    } else {
+      this.skillService.createSkill(data).subscribe({
+        next: (response) => {
+          //console log para mirar si se ha mandado bien
+          console.log(response);
+          this.isSkillAdded = true;
+        },
+        error: (err) => {
+          console.log(err.error.msg);
+        },
+      });
+    }
+  }
+
+  //esta función es para el botón que se mostrará al crear una skill
+  newSkill() {
+    //resetea el objeto y la var si está añadida
+    this.isSkillAdded = false;
+
+    this.skill = {
+      skill_name: '',
+    };
   }
 }
