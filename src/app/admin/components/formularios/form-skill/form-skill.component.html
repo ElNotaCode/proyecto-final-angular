@@ -1,11 +1,11 @@
 <div class="container text">
+  <!--SKILL-->
+  <p class="h3 my-3 titulos">Crear Skill</p>
   <div class="my-3 p-3 bg-body rounded shadow-sm" *ngIf="!isSkillAdded">
-    <!--SKILL-->
-    <p class="h3 my-3">Crear Skill</p>
     <form>
       <!--TEXT NOMBRE-->
       <div class="form-group row mt-4">
-        <label for="nombreSkill" class="col-sm-2 col-form-label align-self-center">Nombre:</label>
+        <label for="nombreSkill" class="col-sm-2 col-form-label align-self-center textos">Nombre:</label>
         <div class="col-sm-10 align-self-center">
           <input type="text" class="form-control" id="nombreSkill" name="skill.nombreSkill"
             placeholder="Introduce el nombre de la Skill" [(ngModel)]="skill.skill_name" />
