@@ -1,13 +1,15 @@
 <div class="container text">
-  <p class="h3 my-3">Crear Candidate-Position</p>
-  <div class="my-3 p-3 bg-body rounded shadow-sm">
+  <div class="my-3 p-3 bg-body rounded shadow-sm" *ngIf="!isPositionCandidateAdded">
+    <p class="h3 my-3">Crear Candidate-Position</p>
+
     <!--HRUSER POSITION-->
     <form>
       <!--SELECT FK HRUSER-->
       <div class="form-group my-3">
+
         <label for="fkCandidate">Seleccionar Candidate:</label>
-        <select class="form-control" id="fkCandidate" name="fkCandidate">
-          <option value="">ID1</option>
+        <select class="form-control" id="fkCandidate" name="data.fkCandidate">
+          <option  *ngFor="let cand of candidates" value="{{ cand.id}}">{{ cand.candidate_name}}</option>
         </select>
       </div>
       <!--VALIDAR FK HRUSER-->
@@ -21,7 +23,7 @@
       <div class="form-group my-3">
         <label for="fkPosition">Seleccionar Position:</label>
         <select class="form-control" id="fkPosition" name="fkPosition">
-          <option value="">ID1</option>
+          <option  *ngFor="let position of positions" value="{{ position.id}}"> {{ position.title}}</option>
         </select>
       </div>
       <!--VALIDAR FK POSITION-->
@@ -36,12 +38,8 @@
         <div class="col-sm-2">Fecha de Registro:</div>
         <div class="col-sm-10">
           <div class="input-group date" data-provide="datepicker">
-            <input
-              id="fechaRegistro"
-              name="fechaRegistro"
-              class="form-control"
-              type="date"
-            />
+            <input id="fechaRegistro"  class="form-control" type="date"
+              [(ngModel)]="candidatePosition.registryDate" name="candidatePosition.registryDate"/>
           </div>
         </div>
       </div>
@@ -50,12 +48,7 @@
         <div class="col-sm-2">Fecha de Examen:</div>
         <div class="col-sm-10">
           <div class="input-group date" data-provide="datepicker">
-            <input
-              id="fechaExamen"
-              name="fechaExamen"
-              class="form-control"
-              type="date"
-            />
+            <input id="fechaExamen"   [(ngModel)]="candidatePosition.testDate"  name="testDate" class="form-control" type="date" />
           </div>
         </div>
       </div>
@@ -63,18 +56,19 @@
       <div class="row my-3">
         <div class="col-sm-2">Fecha de Entrega:</div>
         <div class="col-sm-10">
-          <input
-            id="fechaEntrega"
-            name="fechaEntrega"
-            class="form-control"
-            type="date"
-          />
+          <input id="fechaEntrega"   [(ngModel)]="candidatePosition.completionDate"  name="completionDate" class="form-control" type="date" />
         </div>
       </div>
       <!--BUTTON-->
-      <button class="btn btn-primary mt-4" (click)="enviarFormulario()">
+      <button class="btn btn-primary mt-4" (click)="addCandidatePosition()">
         Enviar
       </button>
     </form>
+  </div>
+  <div class="my-3 p-3 bg-body rounded shadow-sm" *ngIf="isPositionCandidateAdded">
+    <p class="h3 my-3">CandidatePosition succefully added!</p>
+    <button class="btn btn-primary mt-4" (click)="newCandidatePosition()">
+      Crear otra CandidatePosition
+    </button>
   </div>
 </div>
