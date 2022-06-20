@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AsideComponent } from './admin/aside/aside.component';
+import { LoginComponent } from './admin/auth/login/login.component';
 import { FormSkillComponent } from './admin/components/formularios/form-skill/form-skill.component';
 import { TableCandidatePositionComponent } from './admin/components/listas/table-candidate-position/table-candidate-position.component';
 import { TableCandidateSkillComponent } from './admin/components/listas/table-candidate-skill/table-candidate-skill.component';
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+  },
+  {
+    path: 'admin',
+    component: LoginComponent,
   },
   {
     path: 'candidatura',
@@ -89,11 +94,6 @@ const routes: Routes = [
 
     ]
 
-  },
-  {
-
-    path: 'admin/skills',
-    component: TableSkillComponent,
   },
   {
     path: '**',
