@@ -1,4 +1,4 @@
-<div *ngIf="!isLoggedIn">
+<!--<div *ngIf="!isLoggedIn">
   <form name="form" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="username">Usuario</label>
@@ -27,4 +27,71 @@
 </div>
 <div *ngIf="isLoggedIn">
   <h1>Estás Logeado!</h1>
+</div>-->
+
+
+
+<div class="container">
+  <div class="forms-container">
+    <div class="signin-signup">
+      <!-- Formularo Login -->
+      <form action="#" class="sign-in-form">
+        <h2 class="title">Iniciar Sesión</h2>
+        <div class="input-field">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="Email" />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Contraseña" />
+        </div>
+        <input type="submit" value="Entrar" class="btn solid" />
+      </form>
+      <!-- Formulario de Registro -->
+      <form action="#" class="sign-up-form">
+        <h2 class="title">Registro</h2>
+        <div class="input-field">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="Usuario" />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-envelope"></i>
+          <input type="email" placeholder="Email" />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Contraseña" />
+        </div>
+        <input type="submit" class="btn" value="Registrarse" />
+      </form>
+    </div>
+  </div>
+
+  <div class="panels-container">
+    <div class="panel left-panel">
+      <div class="content">
+        <h3>¿Eres nuevo?</h3>
+        <p>
+          Si todavía no tienes cuenta, regístrate
+        </p>
+        <button class="btn transparent" id="sign-up-btn">
+          Únete
+        </button>
+      </div>
+      <img src="../assets/img/logoInicioSesion.svg" class="image" alt="" />
+    </div>
+    <div class="panel right-panel">
+      <div class="content">
+        <h3>Ya tienes una cuenta?</h3>
+        <p>
+          Si ya estás registrado, inicia sesión aquí
+        </p>
+        <button class="btn transparent" id="sign-in-btn">
+          Iniciar Sesión
+        </button>
+      </div>
+      <img src="../assets/img/register.svg" class="image" alt="" />
+    </div>
+  </div>
 </div>
+
