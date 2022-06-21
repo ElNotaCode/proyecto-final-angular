@@ -12,6 +12,7 @@ import { TableHrPositionComponent } from './admin/components/listas/table-hr-pos
 import { TableHrUserComponent } from './admin/components/listas/table-hr-user/table-hr-user.component';
 import { TablePositionTableComponent } from './admin/components/listas/table-position-table/table-position-table.component';
 import { TableSkillComponent } from './admin/components/listas/table-skill/table-skill.component';
+import { AboutComponent } from './public/about/about.component';
 import { CandidaturaComponent } from './public/candidatura/candidatura.component';
 import { HomeComponent } from './public/home/home.component';
 
@@ -21,36 +22,16 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'admin',
-    component: LoginComponent,
-  },
-  {
-    path: 'candidatura',
-    component: CandidaturaComponent,
-  },
-  {
-    path: 'candidateposition',
-    component: TableCandidatePositionComponent,
-  },
-  {
-    path: 'skills',
-    component: TableSkillComponent,
-  },
-  {
-    path: 'createSkill',
-    component: FormSkillComponent,
-  },
-  {
-    path: 'hrUser',
-    component: TableHrUserComponent,
+    path: 'about',
+    component: AboutComponent,
   },
   {
     path: 'candidate',
-    component: TableCandidateComponent,
+    component: CandidaturaComponent,
   },
   {
-    path: 'admin/dashboard',
-    component: AsideComponent,
+    path: 'admin',
+    component: LoginComponent,
   },
   {
     path: 'admin',
