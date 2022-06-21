@@ -1,25 +1,15 @@
 <div class="container text">
   <!--si no hay una skill que haya sido creada previamente, como es el caso al entrar a la página, se nos muestra el formulario-->
+  <!--SKILL-->
+  <p class="h3 my-3 titulos">Crear Skill</p>
   <div class="my-3 p-3 bg-body rounded shadow-sm" *ngIf="!isSkillAdded">
-    <!--SKILL-->
-    <p class="h3 my-3">Crear Skill</p>
     <form>
       <!--TEXT NOMBRE-->
       <div class="form-group row mt-4">
-        <label
-          for="nombreSkill"
-          class="col-sm-2 col-form-label align-self-center"
-          >Nombre:</label
-        >
+        <label for="nombreSkill" class="col-sm-2 col-form-label align-self-center textos">Nombre:</label>
         <div class="col-sm-10 align-self-center">
-          <input
-            type="text"
-            class="form-control"
-            id="nombreSkill"
-            name="skill.nombreSkill"
-            placeholder="Introduce el nombre de la Skill"
-            [(ngModel)]="skill.skill_name"
-          />
+          <input type="text" class="form-control" id="nombreSkill" name="skill.nombreSkill"
+            placeholder="Introduce el nombre de la Skill" [(ngModel)]="skill.skill_name" />
         </div>
       </div>
       <!--VALIDAR NOMBRE-->
@@ -36,7 +26,7 @@
   </div>
   <!--Cuando se añada una skill, aparecerá un mensaje indicandolo con un botón para añadir otra en caso que el usuario así lo quiera-->
   <div class="my-3 p-3 bg-body rounded shadow-sm" *ngIf="isSkillAdded">
-    <p class="h3 my-3">Skill succefully added!</p>
+    <p class="h3 my-3">Skill añadida correctamente!</p>
     <button class="btn btn-primary mt-4" (click)="newSkill()">
       Crear otra skill
     </button>
