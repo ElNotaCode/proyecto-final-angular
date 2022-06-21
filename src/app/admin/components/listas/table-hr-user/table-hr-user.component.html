@@ -1,5 +1,5 @@
 <app-form-hr-user></app-form-hr-user>
-<main class="container text ">
+<main class="container text">
   <p class="h3 my-3 titulos">Lista User</p>
   <div class="my-3 p-3 bg-body rounded shadow-sm">
     <h6 class="border-bottom pb-2 mb-0"></h6>
@@ -14,19 +14,26 @@
       <tbody>
         <tr *ngFor="let hrUser of hrUsers">
           <td>
-            <p class="fw-normal mb-1">{{hrUser.id_user}}</p>
+            <p class="fw-normal mb-1">{{ hrUser.id_user }}</p>
           </td>
           <td>
             <div class="d-flex align-items-center">
               <div class="ms-3">
-                <p class="fw-bold mb-1">{{hrUser.username}}</p>
+                <p class="fw-bold mb-1">{{ hrUser.username }}</p>
               </div>
             </div>
           </td>
           <td>
-            <button type="button" class="btn btn-success"><i class="bx bx-pencil"  aria-hidden="true"></i>
+            <button type="button" class="btn btn-success">
+              <i class="bx bx-pencil" aria-hidden="true"></i>
             </button>
-            <button type="button" class="btn btn-danger"><i class="bx bx-trash " aria-hidden="true"></i></button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="deleteHrUser(hrUser.id_user)"
+            >
+              <i class="bx bx-trash" aria-hidden="true"></i>
+            </button>
           </td>
         </tr>
       </tbody>

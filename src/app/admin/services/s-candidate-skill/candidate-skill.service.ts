@@ -9,7 +9,7 @@ import { catchError, Observable } from 'rxjs';
 const apiUrl: string = 'http://localhost:8181/api/candidateSkills';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CandidateSkillService {
   //TODO: Pasar a la URL de heroku cuando funcione
@@ -31,16 +31,16 @@ export class CandidateSkillService {
 
   //R
   readCandidateSkill(id: any): Observable<any> {
-    return this.httpClient.get('${apiUrl}/${id}');
+    return this.httpClient.get(`${apiUrl}/${id}`);
   }
 
   //U
   updateCandidateSkill(id: any, data: any): Observable<any> {
-    return this.httpClient.put('${apiUrl}/${id}', data);
+    return this.httpClient.put(`${apiUrl}/${id}`, data);
   }
 
   //D
   deleteCandidateSkill(id: any): Observable<any> {
-    return this.httpClient.delete('${apiUrl}/${id}');
+    return this.httpClient.delete(`${apiUrl}/${id}`);
   }
 }
