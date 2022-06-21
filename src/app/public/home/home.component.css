@@ -4,18 +4,27 @@
 
 .bg-bostrap{
   background-color: #7752BE;
+  margin-left: 119px;
+}
+.bg-blue{
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(148,200,253,0.8879331095834796) 100%);
+
 }
 
 .bg-java{
   background-color: #FAB005;
+  margin-left: 119px;
 }
 
 .bg-angular{
   background-color: #F03E3D;
+  margin-left: 119px;
 }
 
 .bg-mysql{
   background-color: #4DADF7;
+  margin-left: 119px;
 }
 
 .bg-btn-blue{
@@ -27,7 +36,8 @@
 .bg-btn-white{
   background-color: #fff;
   border-color: #439FF2;
-  color:black
+  color:black;
+
 }
 
 /*candidate*/
