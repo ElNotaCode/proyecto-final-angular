@@ -43,6 +43,6 @@ export class SkillService {
 
   //D
   deleteSkill(id: any): Observable<any> {
-    return this.httpClient.delete('${apiUrl}/${id}');
+    return this.httpClient.delete(`${apiUrl}/${id}`);
   }
 }

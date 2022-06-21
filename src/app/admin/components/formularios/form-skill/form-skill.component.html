@@ -1,4 +1,5 @@
 <div class="container text">
+  <!--si no hay una skill que haya sido creada previamente, como es el caso al entrar a la página, se nos muestra el formulario-->
   <!--SKILL-->
   <p class="h3 my-3 titulos">Crear Skill</p>
   <div class="my-3 p-3 bg-body rounded shadow-sm" *ngIf="!isSkillAdded">
@@ -12,6 +13,7 @@
         </div>
       </div>
       <!--VALIDAR NOMBRE-->
+      <!-- Indicará al usuario que no puede dejar el campo vacío-->
       <div *ngIf="validarNombre" class="row my-3">
         <div class="col-sm-2"></div>
         <div class="col-sm-10">
@@ -22,6 +24,7 @@
       <button class="btn btn-primary mt-4" (click)="addSkill()">Enviar</button>
     </form>
   </div>
+  <!--Cuando se añada una skill, aparecerá un mensaje indicandolo con un botón para añadir otra en caso que el usuario así lo quiera-->
   <div class="my-3 p-3 bg-body rounded shadow-sm" *ngIf="isSkillAdded">
     <p class="h3 my-3">Skill añadida correctamente!</p>
     <button class="btn btn-primary mt-4" (click)="newSkill()">
