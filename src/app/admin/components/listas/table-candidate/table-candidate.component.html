@@ -31,7 +31,11 @@
             <button type="button" class="btn btn-success">
               <i class="bx bx-pencil" aria-hidden="true"></i>
             </button>
-            <button type="button" class="btn btn-danger">
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="deleteCandidate(candidate.id)"
+            >
               <i class="bx bx-trash" aria-hidden="true"></i>
             </button>
           </td>

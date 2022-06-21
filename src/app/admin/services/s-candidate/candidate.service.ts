@@ -43,6 +43,6 @@ export class CandidateService {
 
   //D
   deleteCandidate(id: any): Observable<any> {
-    return this.httpClient.delete('${apiUrl}/${id}');
+    return this.httpClient.delete(`${apiUrl}/${id}`);
   }
 }
