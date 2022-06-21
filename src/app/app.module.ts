@@ -25,6 +25,7 @@ import { CandidaturaComponent } from './public/candidatura/candidatura.component
 import { FooterComponent } from './public/footer/footer.component';
 import { NavComponent } from './public/nav/nav.component';
 import { LoginComponent } from './admin/auth/login/login.component';
+import { EditSkillComponent } from './admin/components/formularios/edit-skill/edit-skill.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { LoginComponent } from './admin/auth/login/login.component';
     AsideComponent,
     NavComponent,
     LoginComponent,
+    EditSkillComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AsideComponent } from './admin/aside/aside.component';
 import { LoginComponent } from './admin/auth/login/login.component';
+import { EditSkillComponent } from './admin/components/formularios/edit-skill/edit-skill.component';
 import { FormSkillComponent } from './admin/components/formularios/form-skill/form-skill.component';
 import { TableCandidatePositionComponent } from './admin/components/listas/table-candidate-position/table-candidate-position.component';
 import { TableCandidateSkillComponent } from './admin/components/listas/table-candidate-skill/table-candidate-skill.component';
@@ -37,44 +38,48 @@ const routes: Routes = [
     path: 'admin',
     component: AsideComponent,
 
-    children:[
-
+    children: [
       {
         path: 'hrusers',
-        component: TableHrUserComponent
+        component: TableHrUserComponent,
       },
       {
         path: 'positions',
-        component: TablePositionTableComponent
+        component: TablePositionTableComponent,
       },
       {
         path: 'hrpositions',
-        component: TableHrPositionComponent
+        component: TableHrPositionComponent,
       },
       {
         path: 'candidates',
-        component: TableCandidateComponent
+        component: TableCandidateComponent,
       },
       {
         path: 'candidatepositions',
-        component: TableCandidatePositionComponent
+        component: TableCandidatePositionComponent,
       },
       {
         path: 'skills',
-        component: TableSkillComponent
+        component: TableSkillComponent,
+
+        children: [
+          {
+            path: 'editSkill/:id',
+            component: EditSkillComponent,
+          },
+        ],
       },
       {
         path: 'candidateskills',
-        component: TableCandidateSkillComponent
+        component: TableCandidateSkillComponent,
       },
-           //esto no va hay que mirarlo..
+      //esto no va hay que mirarlo..
       {
         path: '**',
         component: AsideComponent,
-      }
-
-    ]
-
+      },
+    ],
   },
   {
     path: '**',
