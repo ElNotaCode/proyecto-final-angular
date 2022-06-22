@@ -1,0 +1,22 @@
+.bg-blue{
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(148,200,253,0.8879331095834796) 100%);
+
+}
+
+.txt-decoration{
+  text-decoration: none;
+  color: black;
+}
+
+a{
+  text-decoration: none;
+
+}
+
+header {
+  background-image: url("../../../assets/about/tsystemm.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 485px;
+}

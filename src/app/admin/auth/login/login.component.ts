@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
 
     const sign_in_btn: any = document.querySelector("#sign-in-btn");
     const sign_up_btn: any = document.querySelector("#sign-up-btn");
-    const container: any = document.querySelector(".container");
+    const container: any = document.querySelector(".co");
 
     sign_up_btn.addEventListener("click", () => {
       container.classList.add("sign-up-mode");

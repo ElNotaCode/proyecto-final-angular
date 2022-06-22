@@ -26,7 +26,14 @@
   background-color: #4DADF7;
   margin-left: 119px;
 }
+.bg-tick{
+  background-color: #4DADF7;
+  width:30px;
+  height: 30px;
+  border-radius: 2px;
+  float:left;
 
+}
 .bg-btn-blue{
   background-color: #439FF2;
   border: none;
@@ -38,6 +45,10 @@
   border-color: #439FF2;
   color:black;
 
+}
+
+.bg-txt-bold{
+  font-weight: bold;
 }
 
 /*candidate*/
