@@ -11,7 +11,7 @@
 .call-to-action:before {
   content: "";
   position: absolute;
-  background-color: #1c375e;
+  background-color: #6ea7f7;
   height: 100%;
   width: 100%;
   top: 0;
@@ -31,8 +31,9 @@ header.masthead {
 header.masthead:before {
   content: "";
   position: absolute;
-  background-color: #1c375e;
+  background-image: url("../../../assets/imgHome/procesoSeleccion.svg");
   height: 100%;
+  background-color: #64a8ff;
   width: 100%;
   top: 0;
   left: 0;

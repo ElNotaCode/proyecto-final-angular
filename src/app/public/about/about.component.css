@@ -13,3 +13,10 @@ a{
   text-decoration: none;
 
 }
+
+header {
+  background-image: url("../../../assets/about/tsystem.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 485px;
+}
