@@ -47,6 +47,10 @@
 
 }
 
+.bg-txt-bold{
+  font-weight: bold;
+}
+
 /*candidate*/
 
 .call-to-action {
