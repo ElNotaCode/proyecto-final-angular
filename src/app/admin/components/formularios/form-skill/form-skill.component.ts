@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { SkillService } from 'src/app/admin/services/s-skill/skill.service';
 
 /**
@@ -16,11 +16,16 @@ export class FormSkillComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  //esta variable se usa para alternar entre cambiar y editar
+
+  @Input() isEdit = false;
+  @Input() id = '';
+
   //esta variable se usa para indicar que se ha creado la skill inicializamos en FALSE
   isSkillAdded = false;
 
   //objeto de la tabla
-  skill = {
+  @Input() skill = {
     skill_name: '',
   };
 
@@ -44,6 +49,7 @@ export class FormSkillComponent implements OnInit {
           //console log para mirar si se ha mandado bien
           console.log(response);
           this.isSkillAdded = true;
+
         },
         error: (err) => {
           console.log(err.error.msg);
@@ -61,4 +67,34 @@ export class FormSkillComponent implements OnInit {
       skill_name: '',
     };
   }
+
+  editSkill(){
+    let data = {
+      skill_name: this.skill.skill_name,
+    };
+    //control
+    if (!data.skill_name) {
+      //mostramos el mensaje de validación
+      this.validarNombre = true;
+      //importante poner el return para que pare la función
+      return;
+    } else {
+      this.skillService.updateSkill(this.id,data).subscribe({
+        next: (response) => {
+          //console log para mirar si se ha mandado bien
+          console.log(response);
+          location.reload();
+
+        },
+        error: (err) => {
+          console.log(err.error.msg);
+        },
+      });
+    }
+  }
+
+  cancelar(){
+    location.reload();
+  }
+
 }
