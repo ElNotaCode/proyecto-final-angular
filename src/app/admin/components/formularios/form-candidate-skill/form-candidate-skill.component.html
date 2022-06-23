@@ -1,11 +1,11 @@
 <div class="container text">
-  <p class="h3 my-3">Crear Candidate-Skill</p>
+  <p class="h3 my-3 titulos">Crear Candidate-Skill</p>
   <div class="my-3 p-3 bg-body rounded shadow-sm">
     <!--HRUSER POSITION-->
     <form>
       <!--SELECT FK Candidate-->
       <div class="form-group my-3">
-        <label for="fkCandidate">Seleccionar Candidate:</label>
+        <label for="fkCandidate" class="textos">Seleccionar Candidate:</label>
         <select class="form-control" id="fkCandidate" name="fkCandidate">
           <option value="">ID1</option>
         </select>
@@ -19,7 +19,7 @@
       </div>
       <!--SELECT FK SKILL -->
       <div class="form-group my-3">
-        <label for="validarFkSkill">Seleccionar Skill:</label>
+        <label for="validarFkSkill" class="textos">Seleccionar Skill:</label>
         <select class="form-control" id="validarFkSkill" name="validarFkSkill">
           <option value="">ID1</option>
         </select>
@@ -33,18 +33,10 @@
       </div>
       <!--TEXT NOTA-->
       <div class="form-group row mt-4">
-        <label for="nota" class="col-sm-2 col-form-label align-self-center"
-          >Nota:</label
-        >
+        <label for="nota" class="col-sm-2 col-form-label align-self-center textos">Nota:</label>
         <div class="col-sm-10 align-self-center">
-          <input
-            type="text"
-            class="form-control"
-            id="nota"
-            name="nota"
-            placeholder="Introduce la nota"
-            [(ngModel)]="nota"
-          />
+          <input type="text" class="form-control" id="nota" name="nota" placeholder="Introduce la nota"
+            [(ngModel)]="nota" />
         </div>
       </div>
       <!--VALIDAR NOTA-->
@@ -56,20 +48,10 @@
       </div>
       <!--TEXTAREA-->
       <div class="form-group row my-3">
-        <label
-          for="comentario"
-          class="col-sm-2 col-form-label align-self-center"
-          >Comentario</label
-        >
+        <label for="comentario" class="col-sm-2 col-form-label align-self-center textos">Comentario</label>
         <div class="col-sm-10 align-self-center">
-          <textarea
-            class="form-control"
-            id="comentario"
-            name="comentario"
-            rows="3"
-            placeholder="Introduce tu mensaje."
-            [(ngModel)]="comentario"
-          ></textarea>
+          <textarea class="form-control" id="comentario" name="comentario" rows="3" placeholder="Introduce tu mensaje."
+            [(ngModel)]="comentario"></textarea>
         </div>
       </div>
       <!--VALIDAR NOTA-->

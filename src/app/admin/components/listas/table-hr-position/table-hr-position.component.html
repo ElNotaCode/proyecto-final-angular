@@ -1,41 +1,45 @@
 <app-form-hr-position></app-form-hr-position>
-<main class="container text ">
-  <p class="h3 my-3">Lista Hr_Position</p>
+<main class="container text">
+  <p class="h3 my-3 titulos">Lista Hr_Position</p>
   <div class="my-3 p-3 bg-body rounded shadow-sm">
     <table class="table align-middle mb-0 bg-white">
-      <thead class="bg-light">
+      <thead class="bg-light" style="font-size: 19px;">
         <tr>
-          <th>ID</th>
+          <th>Id</th>
           <th>User</th>
           <th>Position</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let hrPosition of hrPositions" >
+        <tr *ngFor="let hrPosition of hrPositions">
           <td>
-            <p class="fw-normal mb-1">{{hrPosition.id}}</p>
+            <p class="fw-normal mb-1">{{ hrPosition.id }}</p>
           </td>
           <td>
             <div class="d-flex align-items-center">
               <div class="ms-3">
-                <p class="fw-bold mb-1">{{hrPosition.fk_id_user.username}}</p>
+                <p class="fw-bold mb-1">{{ hrPosition.fk_id_user.username }}</p>
               </div>
             </div>
           </td>
           <td>
-            <p class="fw-normal mb-1">{{hrPosition.fk_id_position.title}}</p>
+            <p class="fw-normal mb-1">{{ hrPosition.fk_id_position.title }}</p>
           </td>
           <td>
-            <button type="button" class="btn btn-success"><i class="bx bx-pencil"  aria-hidden="true"></i>
+            <button type="button" class="btn btn-success">
+              <i class="bx bx-pencil" aria-hidden="true"></i>
             </button>
-            <button type="button" class="btn btn-danger"><i class="bx bx-trash " aria-hidden="true"></i></button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="deleteHrPositionService(hrPosition.id)"
+            >
+              <i class="bx bx-trash" aria-hidden="true"></i>
+            </button>
           </td>
         </tr>
       </tbody>
     </table>
-    <small class="d-block text-end mt-3">
-      <a href="#">All updates</a>
-    </small>
   </div>
 </main>

@@ -1,21 +1,21 @@
 <div class="container text">
-  <p class="h3 my-3">Create Candidate</p>
-  <div class="my-3 p-3 bg-body rounded shadow-sm">
-    <!--CANDIDATE-->
+  <!--CANDIDATE-->
+  <p class="h3 my-3 titulos">Create Candidate</p>
+  <div class="my-3 p-3 bg-body rounded shadow-sm" *ngIf="!isCandidateAdded">
     <form>
       <!--TEXT NOMBRE-->
       <div class="form-group row my-3">
-        <label for="nombre" class="col-sm-2 col-form-label align-self-center"
+        <label for="nombre" class="col-sm-2 col-form-label align-self-center textos"
           >Nombre:</label
         >
         <div class="col-sm-10 align-self-center">
           <input
             type="text"
             class="form-control"
-            id="nombre"
-            name="nombre"
+            id="candidate_name"
+            name="candidate_name"
             placeholder="Introduce tu nombre."
-            [(ngModel)]="nombre"
+            [(ngModel)]="candidate.candidate_name"
           />
         </div>
       </div>
@@ -28,17 +28,17 @@
       </div>
       <!--TEXT APELLIDOS-->
       <div class="form-group row my-3">
-        <label for="apellidos" class="col-sm-2 col-form-label align-self-center"
+        <label for="apellidos" class="col-sm-2 col-form-label align-self-center textos"
           >Apellidos:</label
         >
         <div class="col-sm-10 align-self-center">
           <input
             type="text"
             class="form-control"
-            id="apellidos"
-            name="apellidos"
+            id="candidate_surname"
+            name="candidate_surname"
             placeholder="Introduce tus apellidos."
-            [(ngModel)]="apellidos"
+            [(ngModel)]="candidate.candidate_surname"
           />
         </div>
       </div>
@@ -50,9 +50,15 @@
         </div>
       </div>
       <!--BUTTON-->
-      <button class="btn btn-primary mt-4" (click)="enviarFormulario()">
+      <button class="btn btn-primary mt-4" (click)="addCandidate()">
         Enviar
       </button>
     </form>
+  </div>
+  <div class="my-3 p-3 bg-body rounded shadow-sm" *ngIf="isCandidateAdded">
+    <p class="h3 my-3">Candidato añadido correctamente!</p>
+    <button class="btn btn-primary mt-4" (click)="newCandidate()">
+      Crear otro Candidato
+    </button>
   </div>
 </div>

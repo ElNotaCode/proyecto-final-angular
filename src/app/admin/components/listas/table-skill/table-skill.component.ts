@@ -15,7 +15,6 @@ export class TableSkillComponent implements OnInit {
   //Declaramos las variables que vamos a necesitar.
 
   skills: any;
-  currentSkill: any;
   currentIndex = -1;
   searchName = '';
 
@@ -35,5 +34,13 @@ export class TableSkillComponent implements OnInit {
     });
   }
 
-  //TODO: Delete & Read
+  //Delete
+  deleteSkill(id: any) {
+    //TODO: Avisos estas seguro? si no
+    this.skillService.deleteSkill(id).subscribe((response) => {
+      console.log(response);
+    });
+  }
+
+  //TODO: Read
 }
