@@ -4,36 +4,20 @@
 
 .bg-bostrap{
   background-color: #7752BE;
-  margin-left: 119px;
-}
-.bg-blue{
-  background: rgb(255,255,255);
-  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(148,200,253,0.8879331095834796) 100%);
-
 }
 
 .bg-java{
   background-color: #FAB005;
-  margin-left: 119px;
 }
 
 .bg-angular{
   background-color: #F03E3D;
-  margin-left: 119px;
 }
 
 .bg-mysql{
   background-color: #4DADF7;
-  margin-left: 119px;
 }
-.bg-tick{
-  background-color: #4DADF7;
-  width:30px;
-  height: 30px;
-  border-radius: 2px;
-  float:left;
 
-}
 .bg-btn-blue{
   background-color: #439FF2;
   border: none;
@@ -43,12 +27,7 @@
 .bg-btn-white{
   background-color: #fff;
   border-color: #439FF2;
-  color:black;
-
-}
-
-.bg-txt-bold{
-  font-weight: bold;
+  color:black
 }
 
 /*candidate*/
@@ -108,117 +87,4 @@ header.masthead h1, header.masthead .h1 {
   text-align: center;
   padding-bottom: 5%;
 
-}
-
-/*login*/
-/* Expandable CSS*/
-
-/* Modal CSS*/
-.social_login {
-  text-align: center;
-}
-
-.social_log {
-  list-style: none;
-  display: flex;
-  padding: 0;
-  justify-content: center;
-}
-
-.social_log li {
-  margin: 0 6px;
-}
-
-.social_log li img {
-  width: 40px;
-}
-
-.social_login p {
-  color: #8c8c8c;
-}
-
-.signin_modal .nav-tabs .nav-link {
-  background-color: #e5e5e5;
-  border-radius: 0;
-  font-weight: 600;
-  width: 100%;
-  border-color:  #fff0;
-  padding: 1.2rem, 0;
-  font-size: 16px;
-}
-
-.signin_modal .nav-tabs .nav-link.active{
-  background-color: #fff;
-}
-
-.signin_modal .nav-tabs .nav-item {
-  width: 50%;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.signin_modal .nav-tabs {
-  border-bottom: none;
-
-}
-
-.signin_tab{
-  padding: 0 3rem;
-}
-
-.signin_tab input.form-control{
-  font-size: 12px;
-  color: #8c8c8c;
-  height: 40px;
-
-}
-
-.signin_link{
-  text-align: center;
-  color: #8c8c8c;
-  margin-top: 10px;
-}
-
-.forgot_link{
-  text-align: right;
-  font-size: 12px;
-}
-.signin_dialog .modal-header{
-  text-align: center;
-  display: block;
-}
-
-#myTab{
-  border: none;
-}
-
-.signin_dialog .modal-header img{
-  width: 250px;
-  margin: auto;
-  margin-bottom: 0,5rem;
-
-}
-.signin_dialog .modal-header p{
-  color: #fff;
-  font-size: 14px;
-  padding: 0 1rem;
-
-}
-
-.signin_dialog .modal-header p a{
-  color:#fff;
-}
-
-.signin_dialog .modal-content{
-  background-color: transparent;
-  border: none;
-}
-
-.signin_dialog .modal-body{
-  background-color: #fff;
-  padding: 0;
-}
-
-.btn-width{
-  width: 100%;
 }

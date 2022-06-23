@@ -16,7 +16,7 @@ export class HrPositionService {
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   //importamos HttpClient y lo passamos como parametro al constructor
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
 
   //list() nos mostrará todos los registros
   listHrPosition(): Observable<any> {
@@ -31,16 +31,16 @@ export class HrPositionService {
 
   //R
   readHrPositions(id: any): Observable<any> {
-    return this.httpClient.get(`${apiUrl}/${id}`);
+    return this.httpClient.get('${apiUrl}/${id}');
   }
 
   //U
   updateHrPositions(id: any, data: any): Observable<any> {
-    return this.httpClient.put(`${apiUrl}/${id}`, data);
+    return this.httpClient.put('${apiUrl}/${id}', data);
   }
 
   //D
   deleteHrPositions(id: any): Observable<any> {
-    return this.httpClient.delete(`${apiUrl}/${id}`);
+    return this.httpClient.delete('${apiUrl}/${id}');
   }
 }

@@ -33,16 +33,16 @@ export class CandidateService {
 
   //R
   readCandidate(id: any): Observable<any> {
-    return this.httpClient.get(`${apiUrl}/${id}`);
+    return this.httpClient.get('${apiUrl}/${id}');
   }
 
   //U
   updateCandidate(id: any, data: any): Observable<any> {
-    return this.httpClient.put(`${apiUrl}/${id}`, data);
+    return this.httpClient.put('${apiUrl}/${id}', data);
   }
 
   //D
   deleteCandidate(id: any): Observable<any> {
-    return this.httpClient.delete(`${apiUrl}/${id}`);
+    return this.httpClient.delete('${apiUrl}/${id}');
   }
 }

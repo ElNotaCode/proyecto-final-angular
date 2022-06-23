@@ -34,13 +34,5 @@ export class TableCandidateComponent implements OnInit {
     });
   }
 
-  //Delete
-  deleteCandidate(id: any) {
-    //TODO: Avisos estas seguro? si no
-    this.candidateService.deleteCandidate(id).subscribe((response) => {
-      console.log(response);
-    });
-  }
-
-  //TODO: Read
+  //TODO: Delete & Read
 }

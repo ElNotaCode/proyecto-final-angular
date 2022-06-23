@@ -1,41 +1,37 @@
 <app-form-position-table></app-form-position-table>
-<main class="container text">
-  <p class="h3 my-3 titulos">Lista Position</p>
+<main class="container text ">
+  <p class="h3 my-3">Lista Position</p>
   <div class="my-3 p-3 bg-body rounded shadow-sm">
     <table class="table align-middle mb-0 bg-white">
-      <thead class="bg-light" style="font-size: 19px;">
+      <thead class="bg-light">
         <tr>
-          <th>Id</th>
+          <th>ID</th>
           <th>Title</th>
           <th>Description</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let position of positions">
+        <tr *ngFor="let position of positions"  >
           <td>
-            <p class="fw-normal mb-1">{{ position.id }}</p>
+            <p class="fw-normal mb-1">{{position.id}}</p>
           </td>
           <td>
-            <p class="fw-normal mb-1">{{ position.title }}</p>
+            <p class="fw-normal mb-1">{{position.title}}</p>
           </td>
           <td>
-            <p class="fw-normal mb-1">{{ position.description }}</p>
+            <p class="fw-normal mb-1">{{position.description}}</p>
           </td>
           <td>
-            <button type="button" class="btn btn-success">
-              <i class="bx bx-pencil" aria-hidden="true"></i>
+            <button type="button" class="btn btn-success"><i class="bx bx-pencil"  aria-hidden="true"></i>
             </button>
-            <button
-              type="button"
-              class="btn btn-danger"
-              (click)="(position.id)"
-            >
-              <i class="bx bx-trash" aria-hidden="true"></i>
-            </button>
+            <button type="button" class="btn btn-danger"><i class="bx bx-trash " aria-hidden="true"></i></button>
           </td>
         </tr>
       </tbody>
     </table>
+    <small class="d-block text-end mt-3">
+      <a href="#">All updates</a>
+    </small>
   </div>
 </main>
