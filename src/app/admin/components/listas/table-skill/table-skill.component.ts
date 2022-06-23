@@ -57,7 +57,6 @@ export class TableSkillComponent implements OnInit {
   editSkill(id:any, skill_name :any){
     this.id = id;
     this.skill.skill_name = skill_name;
-    console.log(this.skill);
     this.isEdit = true;
   }
 }
