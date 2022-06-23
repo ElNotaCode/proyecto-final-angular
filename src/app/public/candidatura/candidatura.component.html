@@ -234,3 +234,61 @@
   </div>
 </div>
 <app-footer></app-footer>
+<!-- Login oculto -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog signin_dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="../../../assets/tyst.png" width="50px" height="100px" alt="logoWeb">
+      </div>
+      <div class="modal-body signin_modal">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#signup" type="button"
+              role="tab" aria-controls="home" aria-selected="true">Regístrate</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#signin" type="button"
+              role="tab" aria-controls="profile" aria-selected="false">Inicia Sesión</button>
+          </li>
+        </ul>
+        <div class="tab-content signin_tab" id="myTabContent">
+          <div class="tab-pane fade show active" id="signup" role="tabpanel" aria-labelledby="home-tab">
+            <form>
+              <div class="mb-3">
+                <input type="text" class="form-control" id="exampleInputText1" aria-describedby="textHelp"
+                  placeholder="Usuario">
+              </div>
+              <div class="mb-3">
+                <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                  placeholder="Contraseña">
+              </div>
+              <div class="mb-3">
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Repetir contraseña">
+              </div>
+              <button type="submit" class="btn btn-primary btn-block btn-width">Crear Cuenta</button>
+              <p class="signin_link">¿Ya tienes una cuenta? <a id="profile-tab" data-bs-toggle="tab"
+                  data-bs-target="#signin" type="button" role="tab" aria-controls="profile" aria-selected="false">Inicia
+                  Sesión</a></p>
+            </form>
+          </div>
+          <div class="tab-pane fade" id="signin" role="tabpanel" aria-labelledby="profile-tab">
+            <form>
+              <div class="mb-3">
+                <input type="text" class="form-control" id="exampleInputText1" aria-describedby="textHelp"
+                  placeholder="Usuario">
+              </div>
+              <div class="">
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+              </div><br />
+              <button type="submit" class="btn btn-primary btn-block btn-width">Iniciar Sesión</button>
+              <p class="signin_link">¿Nuevo en T-Inter·Views? <a id="home-tab" data-bs-toggle="tab"
+                  data-bs-target="#signup" type="button" role="tab" aria-controls="home"
+                  aria-selected="true">Regístrate</a></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
