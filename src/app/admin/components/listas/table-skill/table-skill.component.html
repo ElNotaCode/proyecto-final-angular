@@ -1,4 +1,4 @@
-<app-form-skill></app-form-skill>
+<app-form-skill [isEdit]="isEdit" [skill]="skill" [id]="id"></app-form-skill>
 
 <main class="container text">
   <!--TODO: Añadir *ngIf !data-->
@@ -25,7 +25,7 @@
             </div>
           </td>
           <td>
-            <button type="button" class="btn btn-success">
+            <button type="button" class="btn btn-success" (click)="editSkill(skill.id_skill, skill.skill_name)">
               <i class="bx bx-pencil"></i>
             </button>
             <button
