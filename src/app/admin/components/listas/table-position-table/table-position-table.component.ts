@@ -15,6 +15,26 @@ export class TablePositionTableComponent implements OnInit {
     this.listPosition();
   }
 
+  //esta variable es para el edit
+  isEdit = false;
+  id = "";
+
+  //objeto de la tabla
+  position = {
+    title: '',
+    description: '',
+  };
+
+    //Edit
+    editPosition(id:any, title :any, description:any){
+      this.id = id;
+
+      this.position.title = title;
+      this.position.description = description;
+
+      this.isEdit = true;
+    }
+
   //get all
   listPosition() {
     //Llamas al service de listar y pasa la lista a la variable
@@ -24,10 +44,11 @@ export class TablePositionTableComponent implements OnInit {
   }
 
   //Delete
-  deletPosition(id: any) {
+  deletePosition(id: any) {
     //TODO: Avisos estas seguro? si no
     this.positionService.deletePosition(id).subscribe((response) => {
       console.log(response);
+      location.reload();
     });
   }
 }
