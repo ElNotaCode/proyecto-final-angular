@@ -1,4 +1,4 @@
-<app-form-candidate></app-form-candidate>
+<app-form-candidate [isEdit]="isEdit" [candidate]="candidate" [id]="id"></app-form-candidate>
 
 <main class="container text">
   <p class="h3 my-3 titulos">Lista Candidate</p>
@@ -28,8 +28,8 @@
             <p class="fw-normal mb-1">{{ candidate.candidate_surname }}</p>
           </td>
           <td>
-            <button type="button" class="btn btn-success">
-              <i class="bx bx-pencil" aria-hidden="true"></i>
+            <button type="button" class="btn btn-success" (click)="editCandidate(candidate.id,candidate.candidate_name,candidate.candidate_surname)">
+            <i class="bx bx-pencil" aria-hidden="true"></i>
             </button>
             <button
               type="button"

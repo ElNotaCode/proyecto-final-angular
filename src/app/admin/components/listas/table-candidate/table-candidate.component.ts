@@ -19,12 +19,29 @@ export class TableCandidateComponent implements OnInit {
   currentIndex = -1;
   searchName = '';
 
+    //esta variable es para el edit
+    isEdit = false;
+    id = "";
+
+    candidate = {
+      candidate_name: '',
+      candidate_surname: '',
+    };
+
   //declaramos en el parametro el service
   constructor(private candidateService: CandidateService) {}
 
   ngOnInit(): void {
     this.listCandidates();
   }
+
+    //Edit
+    editCandidate(id:any, candidate_name :any,candidate_surname : any){
+      this.id = id;
+      this.candidate.candidate_name = candidate_name;
+      this.candidate.candidate_surname = candidate_surname;
+      this.isEdit = true;
+    }
 
   //get all
   listCandidates() {
@@ -39,6 +56,7 @@ export class TableCandidateComponent implements OnInit {
     //TODO: Avisos estas seguro? si no
     this.candidateService.deleteCandidate(id).subscribe((response) => {
       console.log(response);
+      location.reload();
     });
   }
 
