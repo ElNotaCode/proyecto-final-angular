@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 const apiURL: string = 'http://localhost:8181/api/hrUsers';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HrUserService {
   //TODO: Pasar a la URL de heroku cuando funcione
@@ -19,7 +19,7 @@ export class HrUserService {
   constructor(private httpClient: HttpClient) {}
 
   // list() nos mostrará todos los registros
-  listHrUser(): Observable<any>{
+  listHrUser(): Observable<any> {
     // TODO: Añadir handle error
     return this.httpClient.get(apiURL);
   }
@@ -30,17 +30,16 @@ export class HrUserService {
 
   //R
   readHrUser(id: any): Observable<any> {
-    return this.httpClient.get('${apiURL}/${id}');
+    return this.httpClient.get(`${apiURL}/${id}`);
   }
 
   //U
   updateHrUser(id: any, data: any): Observable<any> {
-    return this.httpClient.put('${apiURL}/${id}', data);
+    return this.httpClient.put(`${apiURL}/${id}`, data);
   }
 
   //D
   deleteHrUser(id: any): Observable<any> {
-    return this.httpClient.delete('${apiURL}/${id}');
+    return this.httpClient.delete(`${apiURL}/${id}`);
   }
-
 }

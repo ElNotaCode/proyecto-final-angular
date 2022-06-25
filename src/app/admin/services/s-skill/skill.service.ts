@@ -33,16 +33,16 @@ export class SkillService {
 
   //R
   readSkill(id: any): Observable<any> {
-    return this.httpClient.get('${apiUrl}/${id}');
+    return this.httpClient.get(`${apiUrl}/${id}`);
   }
 
   //U
   updateSkill(id: any, data: any): Observable<any> {
-    return this.httpClient.put('${apiUrl}/${id}', data);
+    return this.httpClient.put(`${apiUrl}/${id}`, data);
   }
 
   //D
   deleteSkill(id: any): Observable<any> {
-    return this.httpClient.delete('${apiUrl}/${id}');
+    return this.httpClient.delete(`${apiUrl}/${id}`);
   }
 }

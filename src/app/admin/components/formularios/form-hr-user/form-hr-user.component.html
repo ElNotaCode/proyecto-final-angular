@@ -1,11 +1,11 @@
 <div class="container text">
-  <p class="h3 my-3">Crear HR User</p>
+  <p class="h3 my-3 titulos">Crear HR User</p>
   <div class="my-3 p-3 bg-body rounded shadow-sm" *ngIf="!isHrUserAdded">
     <!--HRUSER-->
     <form>
       <!--TEXT NOMBRE-->
       <div class="form-group row mt-4">
-        <label for="username" class="col-sm-2 col-form-label align-self-center">Nombre:</label>
+        <label for="username" class="col-sm-2 col-form-label align-self-center textos">Nombre:</label>
         <div class="col-sm-10 align-self-center">
           <input type="text" class="form-control" id="username" name="hrUser.username"
             placeholder="Introduce un nombre del HR User." [(ngModel)]="hrUser.username" />

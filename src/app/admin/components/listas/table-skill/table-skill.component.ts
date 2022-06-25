@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 //importamos el servicio relacionado con el componente
 import { SkillService } from 'src/app/admin/services/s-skill/skill.service';
 
+
 /**
  * @Author Eloi Martorell Martín
  */
@@ -15,9 +16,16 @@ export class TableSkillComponent implements OnInit {
   //Declaramos las variables que vamos a necesitar.
 
   skills: any;
-  currentSkill: any;
   currentIndex = -1;
   searchName = '';
+
+  //esta variable es para el edit
+  isEdit = false;
+  id = "";
+
+  skill = {
+    skill_name: '',
+  };
 
   //declaramos en el parametro el service
   constructor(private skillService: SkillService) {}
@@ -35,5 +43,20 @@ export class TableSkillComponent implements OnInit {
     });
   }
 
-  //TODO: Delete & Read
+  //Delete
+  deleteSkill(id: any) {
+    //TODO: Avisos estas seguro? si no
+    this.skillService.deleteSkill(id).subscribe((response) => {
+      console.log(response);
+      //Reload
+      location.reload();
+    });
+  }
+
+  //Edit
+  editSkill(id:any, skill_name :any){
+    this.id = id;
+    this.skill.skill_name = skill_name;
+    this.isEdit = true;
+  }
 }
