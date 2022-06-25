@@ -205,7 +205,7 @@ header .image-text .header-text {
     width: calc(100% - 250px);
     background: var(--body-color);
     transition: var(--tran-05);
-
+    min-height: 100vh;
 }
 
 .home .text{
@@ -222,3 +222,4 @@ header .image-text .header-text {
 
 
 }
+
