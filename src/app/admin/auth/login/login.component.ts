@@ -45,16 +45,21 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.form.username = "emartorell";
+    this.form.password = "password";
     const { username, password } = this.form;
 
     this.authService.login(username, password).subscribe((data) => {
-      this.tokenStorage.saveToken(data.token);
+      //this.tokenStorage.saveToken(data.token);
+      window.sessionStorage.setItem("authtoken", data.token);
+      console.log(`getItem ${window.sessionStorage.getItem("authtoken")}`);
+      console.log(data.token);
       this.tokenStorage.saveUser(data);
 
       this.isLoginFailed = false;
       this.isLoggedIn = true;
       //this.roles = this.tokenStorage.getUser().roles;
-      this.reloadPage();
+      //this.reloadPage();
     });
   }
 
