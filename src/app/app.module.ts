@@ -25,6 +25,7 @@ import { CandidaturaComponent } from './public/candidatura/candidatura.component
 import { FooterComponent } from './public/footer/footer.component';
 import { NavComponent } from './public/nav/nav.component';
 import { LoginComponent } from './admin/auth/login/login.component';
+import { AuthInterceptorInterceptor, authInterceptorProviders } from './admin/_helpers/auth-interceptor.interceptor';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,7 @@ import { LoginComponent } from './admin/auth/login/login.component';
     LoginComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
