@@ -1,4 +1,4 @@
-<app-form-hr-user></app-form-hr-user>
+<app-form-hr-user [isEdit]="isEdit" [hrUser]="hrUser" [id]="id"></app-form-hr-user>
 <main class="container text">
   <p class="h3 my-3 titulos">Lista User</p>
   <div class="my-3 p-3 bg-body rounded shadow-sm">
@@ -25,7 +25,7 @@
           </td>
           <td>
             <button type="button" class="btn btn-success">
-              <i class="bx bx-pencil" aria-hidden="true"></i>
+              <i class="bx bx-pencil" aria-hidden="true" (click)="editHrUser(hrUser.id_user, hrUser.username)"></i>
             </button>
             <button
               type="button"

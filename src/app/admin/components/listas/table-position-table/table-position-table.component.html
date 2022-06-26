@@ -1,4 +1,4 @@
-<app-form-position-table></app-form-position-table>
+<app-form-position-table [isEdit]="isEdit" [position]="position" [id]="id"></app-form-position-table>
 <main class="container text">
   <p class="h3 my-3 titulos">Lista Position</p>
   <div class="my-3 p-3 bg-body rounded shadow-sm">
@@ -24,14 +24,12 @@
           </td>
           <td>
             <button type="button" class="btn btn-success">
-              <i class="bx bx-pencil" aria-hidden="true"></i>
+              <i class="bx bx-pencil" aria-hidden="true" (click)="editPosition(position.id, position.title, position.description)"></i>
             </button>
             <button
               type="button"
               class="btn btn-danger"
-              (click)="(position.id)"
-              style="margin-left: 4px"
-
+              (click)="deletePosition(position.id)"
             >
               <i class="bx bx-trash" aria-hidden="true"></i>
             </button>

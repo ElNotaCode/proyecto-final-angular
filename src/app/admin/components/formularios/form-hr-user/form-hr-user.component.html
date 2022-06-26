@@ -1,5 +1,6 @@
 <div class="container text">
-  <p class="h3 my-3 titulos">Crear HR User</p>
+  <p class="h3 my-3 titulos" *ngIf="isEdit">Update HrUser</p>
+  <p class="h3 my-3 titulos" *ngIf="!isEdit">Crear HrUser</p>
   <div class="my-3 p-3 bg-body rounded shadow-sm" *ngIf="!isHrUserAdded">
     <!--HRUSER-->
     <form>
@@ -8,7 +9,7 @@
         <label for="username" class="col-sm-2 col-form-label align-self-center textos">Nombre:</label>
         <div class="col-sm-10 align-self-center">
           <input type="text" class="form-control" id="username" name="hrUser.username"
-            placeholder="Introduce un nombre del HR User." [(ngModel)]="hrUser.username" />
+            placeholder="Introduce un nombre del HR User." [(ngModel)]="hrUser.username" value="{{hrUser.username}}" />
         </div>
       </div>
       <!--VALIDAR NOMBRE-->
@@ -19,7 +20,9 @@
         </div>
       </div>
       <!--BUTTON-->
-      <button class="btn btn-primary mt-4" (click)="addHrUser()">Enviar</button>
+      <button class="btn btn-primary mt-4" *ngIf="isEdit" (click)="editHrUser()">Editar</button>
+      <button class="btn btn-danger mt-4" *ngIf="isEdit" (click)="cancelar()">Cancelar</button>
+      <button class="btn btn-primary mt-4" *ngIf="!isEdit"  (click)="addHrUser()">Enviar</button>
     </form>
   </div>
   <div class="my-3 p-3 bg-body rounded shadow-sm" *ngIf="isHrUserAdded">

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PositionService } from 'src/app/admin/services/s-position/position.service';
 
 @Component({
@@ -14,8 +14,13 @@ export class FormPositionTableComponent implements OnInit {
   //esta variable se usa para indicar que se ha creado la position inicializamos en FALSE
   isPositionAdded = false;
 
+  //esta variable se usa para alternar entre cambiar y editar
+
+  @Input() isEdit = false;
+  @Input() id = '';
+
   //objeto de la tabla
-  position = {
+  @Input() position = {
     title: '',
     description: '',
   };
@@ -70,5 +75,45 @@ export class FormPositionTableComponent implements OnInit {
       title: '',
       description: '',
     };
+  }
+
+  editPosition(){
+    let data = {
+      title: this.position.title,
+      description: this.position.description,
+    };
+    //control
+    if (!data.title || !data.description) {
+      //mostramos el mensaje de validación
+
+      if (!data.description) {
+        this.validarDescripcion = true;
+      } else {
+        this.validarDescripcion = false;
+      }
+      if (!data.title) {
+        this.validarTitulo = true;
+      } else {
+        this.validarTitulo = false;
+      }
+
+      //importante poner el return para que pare la función
+      return;
+    } else {
+      this.positionService.updatePosition(this.id,data).subscribe({
+        next: (response) => {
+          //console log para mirar si se ha mandado bien
+          console.log(response);
+          location.reload();
+        },
+        error: (err) => {
+          console.log(err.error.msg);
+        },
+      });
+    }
+  }
+
+  cancelar(){
+    location.reload();
   }
 }

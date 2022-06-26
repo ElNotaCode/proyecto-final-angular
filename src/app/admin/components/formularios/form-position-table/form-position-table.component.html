@@ -1,5 +1,6 @@
 <div class="container text">
-  <p class="h3 my-3 titulos">Create Position</p>
+  <p class="h3 my-3 titulos" *ngIf="isEdit">Edit Position</p>
+  <p class="h3 my-3 titulos" *ngIf="!isEdit">Crear Position</p>
   <div class="my-3 p-3 bg-body rounded shadow-sm" *ngIf="!isPositionAdded">
     <!--POSITIONS-->
     <form>
@@ -16,6 +17,7 @@
             name="position.tituloPosition"
             placeholder="Introduce un título"
             [(ngModel)]="position.title"
+            value="{{position.title}}"
           />
         </div>
       </div>
@@ -39,6 +41,7 @@
             rows="3"
             placeholder="Introduce tu mensaje."
             [(ngModel)]="position.description"
+            value="{{position.description}}"
           ></textarea>
         </div>
       </div>
@@ -50,7 +53,9 @@
         </div>
       </div>
       <!--BUTTON-->
-      <button class="btn btn-primary mt-4" (click)="addPosition()">
+      <button class="btn btn-primary mt-4" *ngIf="isEdit" (click)="editPosition()">Editar</button>
+      <button class="btn btn-danger mt-4" *ngIf="isEdit" (click)="cancelar()">Cancelar</button>
+      <button class="btn btn-primary mt-4" *!ngIf="isEdit" (click)="addPosition()">
         Enviar
       </button>
     </form>

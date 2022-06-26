@@ -11,6 +11,14 @@ export class TableHrUserComponent implements OnInit {
 
   constructor(private hrUserService: HrUserService) {}
 
+    //esta variable es para el edit
+    isEdit = false;
+    id = "";
+
+    hrUser = {
+      username: '',
+    };
+
   ngOnInit(): void {
     // Después de declararla abajo, llamamos en el init
     this.listHrUser();
@@ -30,6 +38,14 @@ export class TableHrUserComponent implements OnInit {
     //TODO: Avisos estas seguro? si no
     this.hrUserService.deleteHrUser(id).subscribe((response) => {
       console.log(response);
+      location.reload();
     });
   }
+
+  editHrUser(id:any, username:any){
+    this.id = id;
+    this.hrUser.username = username;
+    this.isEdit = true;
+  }
+
 }

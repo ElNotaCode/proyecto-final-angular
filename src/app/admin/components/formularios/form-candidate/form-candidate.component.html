@@ -1,6 +1,7 @@
 <div class="container text">
   <!--CANDIDATE-->
-  <p class="h3 my-3 titulos">Create Candidate</p>
+  <p class="h3 my-3 titulos" *ngIf="isEdit">Update Candidate</p>
+  <p class="h3 my-3 titulos" *ngIf="!isEdit">Crear Candidate</p>
   <div class="my-3 p-3 bg-body rounded shadow-sm" *ngIf="!isCandidateAdded">
     <form>
       <!--TEXT NOMBRE-->
@@ -16,6 +17,7 @@
             name="candidate_name"
             placeholder="Introduce tu nombre."
             [(ngModel)]="candidate.candidate_name"
+            value="{{candidate.candidate_name}}"
           />
         </div>
       </div>
@@ -39,6 +41,7 @@
             name="candidate_surname"
             placeholder="Introduce tus apellidos."
             [(ngModel)]="candidate.candidate_surname"
+            value="{{candidate.candidate_surname}}"
           />
         </div>
       </div>
@@ -50,7 +53,9 @@
         </div>
       </div>
       <!--BUTTON-->
-      <button class="btn btn-primary mt-4" (click)="addCandidate()">
+      <button class="btn btn-primary mt-4" *ngIf="isEdit" (click)="updateCandidate()">Editar</button>
+      <button class="btn btn-danger mt-4" *ngIf="isEdit" (click)="cancelar()">Cancelar</button>
+      <button class="btn btn-primary mt-4" *ngIf="!isEdit" (click)="addCandidate()">
         Enviar
       </button>
     </form>

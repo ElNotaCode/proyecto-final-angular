@@ -1,5 +1,5 @@
 import { HrUserService } from './../../../services/s-hr-user/hr-user.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 /**
  * @Author Borja Montseny
@@ -20,8 +20,12 @@ export class FormHrUserComponent implements OnInit {
   //esta variable se usa para indicar que se ha creado la skill inicializamos en FALSE
   isHrUserAdded = false;
 
+  //esta variable es para el edit
+  @Input() isEdit = false;
+  @Input() id = "";
+
   //objeto de la tabla
-  hrUser = {
+  @Input() hrUser = {
     username: '',
   };
 
@@ -44,6 +48,34 @@ export class FormHrUserComponent implements OnInit {
         //console log para mirar si se ha mandado bien
         console.log(response);
         this.isHrUserAdded = true;
+      },
+      error: (err) => {
+        console.log(err.error.msg);
+      },
+    });
+  }
+}
+
+cancelar(){
+  location.reload();
+}
+
+editHrUser(){
+  let data = {
+    username: this.hrUser.username,
+  };
+  //control
+  if (!data.username) {
+    //mostramos el mensaje de validación
+    this.validarNombre = true;
+    //importante poner el return para que pare la función
+    return;
+  } else {
+    this.hrUserService.updateHrUser(this.id,data).subscribe({
+      next: (response) => {
+        //console log para mirar si se ha mandado bien
+        console.log(response);
+        location.reload();
       },
       error: (err) => {
         console.log(err.error.msg);
