@@ -6,13 +6,15 @@
     <div class="row gx-5 align-items-center justify-content-center">
       <div class="col-lg-8 col-xl-7 col-xxl-6">
         <div class="my-5 text-center text-xl-start">
-          <h1 class="display-5 fw-bolder text-black mb-2">¿Si quieres formar parte de una gran empresa?
+          <h1 class="display-5 fw-bolder text-black mb-2">¿Quieres formar parte de una gran empresa?
           </h1>
           <p class="lead fw-normal text-black-50 mb-4">Si quieres formar parte de una gran empresa, cercana a ti, con
             valores y que apuesta por las personas, puedes inscribirte a través de los siguientes enlaces...</p>
           <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-            <a class="btn btn-lg px-4 me-sm-3 bg-btn-blue" href="#features">Empezar</a>
-            <a class="btn btn-outline-dark btn-lg px-4" href="#!">Aprende más</a>
+            <!--Si tiens la sesión iniciada que te lleve a mis candidaturas si no que te lleve a login/register -->
+            <a class="btn btn-lg px-4 me-sm-3 bg-btn-blue" data-bs-toggle="modal" data-bs-target="#exampleModal" >Empezar</a>
+            <!-- Este yo lo quitaría o haría que te lleve a una pag que te explique el proceso-->
+            <a class="btn btn-outline-dark btn-lg px-4" href="#sabermas">Aprende más</a>
           </div>
         </div>
       </div>
@@ -25,7 +27,7 @@
 <!-- Features section-->
 <section class="py-5" id="features">
   <div class="container px-5 my-5">
-    <h2 class="display-12 fw-bolder text-black mb-2 center">¡Habilidades fundamentales!</h2>
+    <h2 class="display-12 fw-bolder text-black mb-2 center">Habilidades fundamentales</h2>
 
     <div class="row gx-12 row-cols-1 row-cols-md-4">
       <div class="col mb-5 h-100">
@@ -83,17 +85,15 @@
         style="background-image: url('../../../assets/imgHome/foto1.png');background-size: auto;background-repeat: no-repeat;width: 480px;">
       </div>
       <div class="col-lg-7 order-lg-1 my-auto showcase-text">
-        <h2 class="bg-txt-bold">¿TRABAJAR CON NOSOTROS MERECE LA PENA?</h2>
-        <p class="lead mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptas deleniti?
-          Doloremque voluptas dolorem et illum dignissimos eius provident maiores obcaecati aspernatur harum ipsum,
-          pariatur, culpa in non debitis temporibus?</p><br />
-
-        <h5>Loremelit.</h5>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium, animi asperiores, cupiditate in fuga
-          quod ratione autem necessitatibus sapiente,</p>
-        <h5>Loremelit.</h5>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium, animi asperiores, cupiditate in fuga
-          quod ratione autem necessitatibus sapiente,</p>
+        <h2 class="bg-txt-bold" id="sabermas">¿TRABAJAR CON NOSOTROS MERECE LA PENA?</h2>
+        <p class="lead mb-0">Nuestro sistema de evaluación te permitirá demostrar tus capacidades a la empresa. ¡Incluso si ya estas dentro de esta
+          puedes seguir aprendiendo y mejorando tus habilidades!
+        </p><br />
+        <h5 style="font-weight: bold;">Para candidatos</h5>
+        <p> Evalua tus capacidades, consulta las notas y ponte en contacto con los evaluadores desde cualquier lugar.
+        </p>
+        <h5 style="font-weight: bold;">Para los evaluadores</h5>
+        <p>Agiliza la gestion de los candidatos con nuestro sistema.</p>
       </div>
 
     </div>
@@ -105,29 +105,29 @@
       <div class="col-lg-7 my-auto showcase-text" style="    display: flex;
       flex-direction: column;">
         <h2 class="bg-txt-bold">¿QUÉ TE APORTAREMOS?</h2>
-        <p class="lead mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque odit blanditiis, vitae
-          accusantium iusto ratione facilis amet aliquid qui saepe officia voluptatum, tempore rerum hic dolor
-          accusamus. Eum, quibusdam minus.</p><br />
+        <p class="lead mb-0">Nuesto sistema está pensado para garantizar la mayor <strong>calidad, eficacia y agilidad</strong> posible.
+          Nuestro <strong>equipo</strong> está encantado de ayudar a resolver cualqueir problema que pueda surgir.
+        </p><br />
 
 
         <div>
           <div class="feature bg-gradient text-white rounded-3 mb-3 bg-tick">
             <img src="../../../assets/imgHome/check.svg" width="15px" alt="">
           </div>
-          <p style="float:left;">&nbsp;&nbsp;&nbsp;Loremelit.</p>
+          <p style="float:left;">&nbsp;&nbsp;&nbsp;Calidad</p>
         </div>
         <div>
           <div class="feature bg-gradient text-white rounded-3 mb-3 bg-tick">
             <img src="../../../assets/imgHome/check.svg" width="15px" alt="">
           </div>
-          <p style="float:left;">&nbsp;&nbsp;&nbsp;Loremelit.</p>
+          <p style="float:left;">&nbsp;&nbsp;&nbsp;Eficacia</p>
 
         </div>
         <div>
           <div class="feature bg-gradient text-white rounded-3 mb-3 bg-tick">
             <img src="../../../assets/imgHome/check.svg" width="15px" alt="">
           </div>
-          <p style="float:left;">&nbsp;&nbsp;&nbsp;Loremelit.</p>
+          <p style="float:left;">&nbsp;&nbsp;&nbsp;Agilidad</p>
         </div>
 
 
@@ -142,17 +142,9 @@
       </div>
 
       <div class="col-lg-7 order-lg-1 my-auto showcase-text">
-        <h2 class="bg-txt-bold">¿PROCESO DE SELECCIÓN?</h2>
-        <p class="lead mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates eum illum voluptatem
-          dolores error quaerat quisquam? Doloribus velit officiis fugiat, quasi cum inventore soluta provident
-          laborum. Corrupti ipsam ab a!</p><br />
-
-        <h5>Loremelit.</h5>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium, animi asperiores, cupiditate in fuga
-          quod ratione autem necessitatibus sapiente,</p>
-        <h5>Loremelit.</h5>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium, animi asperiores, cupiditate in fuga
-          quod ratione autem necessitatibus sapiente,</p>
+        <h2 class="bg-txt-bold">¿COMO FUNCIONA EL PROCESO DE SELECCIÓN?</h2>
+        <p class="lead mb-0">Cuando el candidato entrega la prueba técnica, el evaluador podrá calificarla y colgar la nota desde la aplicación.
+        </p><br />
       </div>
     </div>
   </div>
