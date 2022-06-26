@@ -8,7 +8,6 @@ import {
 import { Observable } from 'rxjs';
 import { TokenStorageService } from '../services/s-token-storage/token-storage.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthInterceptor } from '../helpers/auth.interceptor';
 
 /**
  * @author Eloi Martorell Martín
@@ -17,21 +16,23 @@ import { AuthInterceptor } from '../helpers/auth.interceptor';
 const TOKEN_HEADER_KEY = 'Authorization';
 
 @Injectable()
-export class AuthInterceptorInterceptor implements HttpInterceptor {
+export class AuthInterceptor implements HttpInterceptor {
   constructor(private token: TokenStorageService) {}
 
   intercept(
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    let authRequest = request;
-    const token = this.token.getToken();
-    if (token != null) {
-      authRequest = request.clone({
-        headers: request.headers.set(TOKEN_HEADER_KEY, 'Bearer ' + token),
+
+    const tokenStorage = window.sessionStorage.getItem("authtoken");
+    console.log(tokenStorage);
+    if (tokenStorage != null) {
+      request = request.clone({
+        headers: request.headers.set(TOKEN_HEADER_KEY, 'Bearer ' + tokenStorage),
       });
+      console.log(request.headers.getAll(TOKEN_HEADER_KEY + " ConsoleLogInterceptor"));
     }
-    return next.handle(authRequest);
+    return next.handle(request);
   }
 }
 
