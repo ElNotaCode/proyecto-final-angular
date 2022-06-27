@@ -11,6 +11,7 @@ export class LoginComponent implements OnInit {
   form: any = {
     username: null,
     password: null,
+    validarPassword: null
   };
 
   isLoginFailed = false;
@@ -44,7 +45,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  onSubmit(): void {
+  login(): void {
     const { username, password } = this.form;
 
     this.authService.login(username, password).subscribe((data) => {
@@ -59,6 +60,17 @@ export class LoginComponent implements OnInit {
       //this.roles = this.tokenStorage.getUser().roles;
       //this.reloadPage();
     });
+  }
+
+  signin(): void {
+    const { username, password, validarPassword } = this.form;
+
+    if(password != validarPassword){
+      alert("Las contraseñas tienen que coincidir.")
+      return;
+    }
+    this.authService.register(username, password, "HRUSER").subscribe((data) => {});
+    alert("Tu cuenta se ha creado.");
   }
 
   reloadPage() {

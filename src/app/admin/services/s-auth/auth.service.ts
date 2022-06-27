@@ -31,13 +31,13 @@ export class AuthService {
     );
   }
 
-  register(username: string, password: string, email: string): Observable<any> {
+  register(username: string, password: string, role: string): Observable<any> {
     return this.httpClient.post(
       REGISTER_URL,
       {
         username,
-        email,
         password,
+        role,
       },
       httpOptions
     );
