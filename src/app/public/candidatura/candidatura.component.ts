@@ -30,13 +30,10 @@ export class CandidaturaComponent implements OnInit {
 
   ngOnInit(): void {
     this.todayWithPipe = this.pipe.transform(Date.now(), 'dd/MM/yyyy');
-
     this.listCandidatePosition();
     this.listPosition();
-
-
-
   }
+  isCandidatePositionAdded = false;
 
       //get all
   listCandidatePosition() {
@@ -61,11 +58,54 @@ export class CandidaturaComponent implements OnInit {
 }
 
 //inscribirse
+candidate = {
+  candidate_name: "marc",
+  candidate_surname: 'lopez',
+};
+
+position = {
+  title: 'java',
+  description: 'crud java',
+};
 
  //Delete
- createCandidatePosition(id: any) {
+ createCandidatePosition(id_position: any) {
   //TODO: Avisos estas seguro? si no
+  console.log(id_position);
+  let data = {
+    //title: this.position.title,
+    registryDate: this.pipe.transform(Date.now(), 'dd/MM/yyyy'),
+    testDate: this.pipe.transform(Date.now()+10, 'dd/MM/yyyy'),
+    completionDate: 0,
+    result:0,
+    FK_ID_POSITION: id_position,
+    title: this.position.title,
+    description: this.position.description,
+    FK_ID_CANDIDATE : 1,
+    candidate_name: this.candidate.candidate_name,
+    candidate_surname: this.candidate.candidate_surname
 
+
+  };
+  console.log(data);
+
+  //control
+  if (id_position) {
+    //mostramos el mensaje de validación
+    //importante poner el return para que pare la función
+    return;
+  } else {
+    this.candidatePositionService.createCandidatePosition(data).subscribe({
+      next: (response) => {
+        //console log para mirar si se ha mandado bien
+        console.log(response);
+        this.isCandidatePositionAdded = true;
+      },
+      error: (err) => {
+        console.log(err.error.msg);
+      },
+    });
+  }
 }
 
 }

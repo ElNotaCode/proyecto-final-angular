@@ -14,6 +14,10 @@ export class CandidatePositionService {
 
   //list() nos mostrará todos los registros
 
+  createCandidatePosition(data: any): Observable<any> {
+    return this.httpClient.post(apiUrl, data);
+  }
+
   listCandidatePosition(): Observable<any> {
     //TODO: Añadir handle error
     return this.httpClient.get(apiUrl);
