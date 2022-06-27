@@ -1,4 +1,3 @@
-
 <app-nav></app-nav>
 <!-- Header-->
 <header class="masthead">
@@ -68,8 +67,10 @@
               <h5 class="card-title mb-3">{{ position.title }}</h5>
             </a>
             <p class="card-text mb-0">{{ position.description }}</p>
-            </div>
-              <button type="button"   (click)="createCandidatePosition(position.id)"  style="width: 87%;font-weight: bolder;margin: 0 10px 10px 24px;" class="btn btn-primary">Inscribirse</button>
+          </div>
+          <button type="button" (click)="createCandidatePosition(position.id)"
+            style="width: 87%;font-weight: bolder;margin: 0 10px 10px 24px;"
+            class="btn btn-primary">Inscribirse</button>
           <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
             <div class="d-flex align-items-end justify-content-between">
               <div class="d-flex align-items-center">
@@ -99,70 +100,29 @@
       </div>
     </div>
     <div class="row gx-5">
-      <div class="col-lg-4 mb-5">
+      <!--Candidaturas por ID-->
+
+      <div class="col-lg-4 mb-5" *ngFor="let candPost of candidatePositions">
         <div class="card h-100 shadow border-0">
           <img class="card-img-top" src="../../../assets/imgHome/fotoderelleno.jpeg" alt="..." />
           <div class="card-body p-4">
-            <div class="badge bg-danger bg-gradient rounded-pill mb-2">NoApto</div>
-            <a class="text-decoration-none link-dark stretched-link" href="#!">
-              <h5 class="card-title mb-3">Card Title</h5>
+
+            <div class="badge bg-success bg-gradient rounded-pill mb-2" *ngIf="candPost.result>=5">Apto</div>
+            <div class="badge bg-danger bg-gradient rounded-pill mb-2" *ngIf="candPost.result<5">NoApto</div>
+            <div class="badge bg-primary bg-gradient rounded-pill mb-2" *ngIf="candPost.result==null">Pendiente</div>
+
+            <a class="text-decoration-none link-dark stretched-link">
+              <h5 class="card-title mb-3">{{candPost.position.title}}</h5>
             </a>
-            <p class="card-text mb-0">Some quick example text to build on the card title and make up
-              the bulk of the card's content.</p>
+            <p class="card-text mb-0">{{candPost.position.description}}</p>
           </div>
           <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
             <div class="d-flex align-items-end justify-content-between">
               <div class="d-flex align-items-center">
 
                 <div class="small">
-                  <div class="text-muted">March 12, 2022 &middot; 6 min read</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 mb-5">
-        <div class="card h-100 shadow border-0">
-          <img class="card-img-top" src="../../../assets/imgHome/fotoderelleno.jpeg" alt="..." />
-          <div class="card-body p-4">
-            <div class="badge bg-primary bg-gradient rounded-pill mb-2">Pendiente</div>
-            <a class="text-decoration-none link-dark stretched-link" href="#!">
-              <h5 class="card-title mb-3">Card Title</h5>
-            </a>
-            <p class="card-text mb-0">This text is a bit longer to illustrate the adaptive height of
-              each card. Some quick example text to build on the card title and make up the bulk
-              of the card's content.</p>
-          </div>
-          <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-            <div class="d-flex align-items-end justify-content-between">
-              <div class="d-flex align-items-center">
-
-                <div class="small">
-                  <div class="text-muted">March 23, 2022 &middot; 4 min read</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 mb-5">
-        <div class="card h-100 shadow border-0">
-          <img class="card-img-top" src="../../../assets/imgHome/fotoderelleno.jpeg" alt="..." />
-          <div class="card-body p-4">
-            <div class="badge bg-success bg-gradient rounded-pill mb-2">Apto</div>
-            <a class="text-decoration-none link-dark stretched-link" href="#!">
-              <h5 class="card-title mb-3">Card Title</h5>
-            </a>
-            <p class="card-text mb-0">Some more quick example text to build on the card title and
-              make up the bulk of the card's content.</p>
-          </div>
-          <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-            <div class="d-flex align-items-end justify-content-between">
-              <div class="d-flex align-items-center">
-
-                <div class="small">
-                  <div class="text-muted">April 2, 2022 &middot; 10 min read</div>
+                  <div class="text-muted"> RegistryDate: {{candPost.registryDate}} &middot; TestDate:
+                    {{candPost.testDate}}</div>
                 </div>
               </div>
             </div>
@@ -184,7 +144,7 @@
           <div class="d-flex align-items-center justify-content-center">
             <img class="card-img-top" src="../../../assets/imgHome/tsystem.png" style="width: 30px;" alt="tsystem" />
             <div class="fw-bold">&nbsp;&nbsp;
-               System
+              System
             </div>
           </div>
         </div>
@@ -241,7 +201,7 @@
                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
               </div><br />
               <button type="submit" class="btn btn-primary btn-block btn-width">Iniciar Sesión</button>
-              <p class="signin_link">¿Nuevo en T-Inter·Views? <a id="home-tab" data-bs-toggle="tab"
+              <p class="signin_link">¿Nuevo en Inter·Views? <a id="home-tab" data-bs-toggle="tab"
                   data-bs-target="#signup" type="button" role="tab" aria-controls="home"
                   aria-selected="true">Regístrate</a></p>
             </form>
