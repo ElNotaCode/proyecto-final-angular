@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenStorageService } from '../services/s-token-storage/token-storage.service';
 
 @Component({
   selector: 'app-aside',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AsideComponent  implements OnInit {
 
-  constructor() { }
+  constructor(private tokenStorageService: TokenStorageService) { }
   ngOnInit(): void {
 
     const body:any = document.querySelector("body"),
@@ -18,14 +19,11 @@ export class AsideComponent  implements OnInit {
 
           toggle.addEventListener("click",() =>{
             sidebar?.classList.toggle("close");
-
           });
+  }
 
-
-
-
-
-
+  logout(): void {
+    this.tokenStorageService.signOut();
   }
 
 }
