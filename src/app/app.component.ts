@@ -34,9 +34,4 @@ export class AppComponent {
   }
 
   //TEST
-
-  logout(): void {
-    this.tokenStorageService.signOut();
-    window.location.reload();
-  }
 }
