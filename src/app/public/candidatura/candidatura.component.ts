@@ -18,7 +18,8 @@ import { DatePipe } from '@angular/common';
 export class CandidaturaComponent implements OnInit {
   candidatePositions: any;
   positions: any;
-
+  candidate:any;
+  position:any;
 
   today: Date = new Date();
   pipe = new DatePipe('en-US');
@@ -57,19 +58,27 @@ export class CandidaturaComponent implements OnInit {
   });
 }
 
+
+
+
+ createCandidatePosition(id_position: any) {
+
+
+  this.position = {
+  id: id_position,
+  title: 'java',
+  description: 'crud java',
+};
 //inscribirse
-candidate = {
+this.candidate = {
+
+  id: id_position,
   candidate_name: "marc",
   candidate_surname: 'lopez',
 };
 
-position = {
-  title: 'java',
-  description: 'crud java',
-};
 
- //Delete
- createCandidatePosition(id_position: any) {
+
   //TODO: Avisos estas seguro? si no
   console.log(id_position);
   let data = {
@@ -78,13 +87,8 @@ position = {
     testDate: this.pipe.transform(Date.now()+10, 'dd/MM/yyyy'),
     completionDate: 0,
     result:0,
-    FK_ID_POSITION: id_position,
-    title: this.position.title,
-    description: this.position.description,
-    FK_ID_CANDIDATE : 1,
-    candidate_name: this.candidate.candidate_name,
-    candidate_surname: this.candidate.candidate_surname
-
+    position : this.position,
+    candidate : this.candidate,
 
   };
   console.log(data);
