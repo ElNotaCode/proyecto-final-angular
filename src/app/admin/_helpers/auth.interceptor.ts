@@ -25,12 +25,13 @@ export class AuthInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
 
     const tokenStorage = window.sessionStorage.getItem("authtoken");
-    console.log(tokenStorage);
     if (tokenStorage != null) {
       request = request.clone({
         headers: request.headers.set(TOKEN_HEADER_KEY, 'Bearer ' + tokenStorage),
       });
-      console.log(request.headers.getAll(TOKEN_HEADER_KEY + " ConsoleLogInterceptor"));
+      console.log("Estas logeado.");
+    }else{
+      console.log("NO estás logeado.")
     }
     return next.handle(request);
   }
