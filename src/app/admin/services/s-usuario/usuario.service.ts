@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
  */
 
 //TODO: Pasar a la URL de Heroku
-const URL = 'http://localhost:8181/users/';
+const URL = 'https://entrevista-tecnica-api.herokuapp.com/users/';
 
 @Injectable({
   providedIn: 'root',

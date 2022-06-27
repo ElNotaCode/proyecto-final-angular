@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-const apiUrl: string = 'http://localhost:8181/api/candidatePosition';
+const apiUrl: string = 'https://entrevista-tecnica-api.herokuapp.com/api/candidatePosition';
 @Injectable({
   providedIn: 'root',
 })

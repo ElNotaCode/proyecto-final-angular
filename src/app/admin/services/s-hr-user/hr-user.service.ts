@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
  * @Author Borja Montseny
  */
 
-const apiURL: string = 'http://localhost:8181/api/hrUsers';
+const apiURL: string = 'https://entrevista-tecnica-api.herokuapp.com/api/hrUsers';
 
 @Injectable({
   providedIn: 'root',

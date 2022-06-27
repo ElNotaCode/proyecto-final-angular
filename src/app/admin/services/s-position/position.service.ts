@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
  */
 
 // TODO: Pasar a la URL de heroku cuando funcione
-const apiUrl: string = 'http://localhost:8181/api/positions';
+const apiUrl: string = 'https://entrevista-tecnica-api.herokuapp.com/api/positions';
 
 @Injectable({
   providedIn: 'root',

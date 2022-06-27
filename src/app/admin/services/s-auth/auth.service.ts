@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
  * @Author Eloi Martorell Martín
  */
 
-const LOGIN_URL = 'http://localhost:8181/login';
-const REGISTER_URL = 'http://localhost:8181/users/';
+const LOGIN_URL = 'https://entrevista-tecnica-api.herokuapp.com/login';
+const REGISTER_URL = 'https://entrevista-tecnica-api.herokuapp.com/users/';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'content-type': 'application/json' }),

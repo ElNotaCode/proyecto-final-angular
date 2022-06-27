@@ -6,7 +6,7 @@ import { catchError, Observable } from 'rxjs';
  * @Author Borja Montseny Peris
  */
 
-const apiUrl: string = 'http://localhost:8181/api/candidateSkills';
+const apiUrl: string = 'https://entrevista-tecnica-api.herokuapp.com/api/candidateSkills';
 
 @Injectable({
   providedIn: 'root',
