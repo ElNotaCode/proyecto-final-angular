@@ -7,7 +7,7 @@
       <div class="form-group my-3">
         <label for="fkHrUser" class="textos">Seleccionar HrUser:</label>
         <select class="form-control" id="fkHrUser" name="fkHrUser">
-          <option value="">ID1</option>
+          <option  *ngFor="let user of hrUsers" value="{{user.id_user}}">{{user.username}}</option>
         </select>
       </div>
       <!--VALIDAR FK HRUSER-->
@@ -21,7 +21,7 @@
       <div class="form-group my-3">
         <label for="fkPosition" class="textos">Seleccionar Position:</label>
         <select class="form-control" id="fkPosition" name="fkPosition">
-          <option value="">ID1</option>
+          <option  *ngFor="let position of positions" value="{{position.id}}">{{position.title}}</option>
         </select>
       </div>
       <!--VALIDAR FK POSITION-->
