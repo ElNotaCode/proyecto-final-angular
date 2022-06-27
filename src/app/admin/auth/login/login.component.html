@@ -6,28 +6,30 @@
         <h2 class="title">Iniciar Sesión</h2>
         <div class="input-field">
           <i class="fas fa-user"></i>
-          <input type="text" placeholder="Username" />
+          <input type="text" placeholder="Username" name="username" [(ngModel)]="form.username" />
         </div>
         <div class="input-field">
           <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Contraseña" />
+          <input type="password" placeholder="Contraseña" name="password" [(ngModel)]="form.password" />
         </div>
-        <input type="submit" value="Entrar" class="btn solid" (click)="onSubmit()" />
+        <input type="submit" value="Entrar" class="btn solid" (click)="login()" />
       </form>
       <!-- Formulario de Registro -->
       <form action="#" class="sign-up-form">
         <h2 class="title">Registro</h2>
         <div class="input-field">
           <i class="fas fa-user"></i>
-          <input type="text" placeholder="Username" />
+          <input type="text" placeholder="Username" name="username" [(ngModel)]="form.username" />
         </div>
-        <div class="input-field">
-          <i class="fas fa-envelope"></i>
-          <input type="email" placeholder="Email" />
-        </div>
+
         <div class="input-field">
           <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Contraseña" />
+          <input type="password" placeholder="Contraseña" name="password" [(ngModel)]="form.password" />
+        </div>
+
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Valida tu Contraseña" name="validarPassword" [(ngModel)]="form.validarPassword" />
         </div>
         <input type="submit" class="btn" value="Registrarse" />
       </form>
