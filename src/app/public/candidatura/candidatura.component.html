@@ -55,77 +55,27 @@
         </div>
       </div>
     </div>
+
     <div class="row gx-5">
-      <div class="col-lg-4 mb-5">
+      <!--Canddaturas disponibles-->
+
+
+      <div class="col-lg-4 mb-5" *ngFor="let position of positions">
         <div class="card h-100 shadow border-0">
           <img class="card-img-top" src="../../../assets/imgHome/fotoderelleno.jpeg" alt="..." />
           <div class="card-body p-4">
             <a class="text-decoration-none link-dark stretched-link" href="#!">
-              <h5 class="card-title mb-3">Card Title</h5>
+              <h5 class="card-title mb-3">{{ position.title }}</h5>
             </a>
-
-            <p class="card-text mb-0">Some quick example text to build on the card title and make up
-              the bulk of the card's content.</p>
-
+            <p class="card-text mb-0">{{ position.description }}</p>
             </div>
-              <button type="button"  style="width: 87%;font-weight: bolder;margin: 0 10px 10px 24px;" class="btn btn-primary">Inscribirse</button>
-
+              <button type="button"   (click)="createCandidatePosition(position.id)"  style="width: 87%;font-weight: bolder;margin: 0 10px 10px 24px;" class="btn btn-primary">Inscribirse</button>
           <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
             <div class="d-flex align-items-end justify-content-between">
               <div class="d-flex align-items-center">
 
                 <div class="small">
-                  <div class="text-muted">March 12, 2022 &middot; 6 min read</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 mb-5">
-        <div class="card h-100 shadow border-0">
-          <img class="card-img-top" src="../../../assets/imgHome/fotoderelleno.jpeg" alt="..." />
-          <div class="card-body p-4">
-            <a class="text-decoration-none link-dark stretched-link" href="#!">
-              <h5 class="card-title mb-3">Card Title</h5>
-            </a>
-            <p class="card-text mb-0">This text is a bit longer to illustrate the adaptive height of
-              each card. Some quick example text to build on the card title and make up the bulk
-              of the card's content.</p>
-          </div>
-          <button type="button"  style="width: 87%;font-weight: bolder;margin: 0 10px 10px 24px;" class="btn btn-primary">Inscribirse</button>
-
-          <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-            <div class="d-flex align-items-end justify-content-between">
-              <div class="d-flex align-items-center">
-
-                <div class="small">
-                  <div class="text-muted">March 23, 2022 &middot; 4 min read</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 mb-5">
-        <div class="card h-100 shadow border-0">
-          <img class="card-img-top" src="../../../assets/imgHome/fotoderelleno.jpeg" alt="..." />
-          <div class="card-body p-4">
-            <a class="text-decoration-none link-dark stretched-link" href="#!">
-              <h5 class="card-title mb-3">Card Title</h5>
-            </a>
-            <p class="card-text mb-0">Some more quick example text to build on the card title and
-              make up the bulk of the card's content.</p>
-
-          </div>
-          <button type="button"  style="width: 87%;font-weight: bolder;margin: 0 10px 10px 24px;" class="btn btn-primary">Inscribirse</button>
-
-          <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-            <div class="d-flex align-items-end justify-content-between">
-              <div class="d-flex align-items-center">
-
-                <div class="small">
-                  <div class="text-muted">April 2, 2022 &middot; 10 min read</div>
+                  <div class="text-muted">{{todayWithPipe}}</div>
                 </div>
               </div>
             </div>
