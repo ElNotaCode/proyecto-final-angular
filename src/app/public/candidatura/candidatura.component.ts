@@ -61,7 +61,7 @@ export class CandidaturaComponent implements OnInit {
 
  logeo = false;
  idposition:any = 0;
- createCandidatePosition(id_position: any) {
+ createCandidatePosition(id_position: any,name: any,apellido: any) {
 
   this.logeo = true;
   this.idposition = id_position;
@@ -72,29 +72,50 @@ export class CandidaturaComponent implements OnInit {
 
   this.position = {
   id: id_position,
-  title: 'java',
-  description: 'crud java',
+  title: name,
+  description: apellido,
 };
 //inscribirse
 this.candidate = {
 
   id: id_position,
-  candidate_name: "marc",
-  candidate_surname: 'lopez',
+  candidate_name: "Marc",
+  candidate_surname: "Lopez",
 };
+
+
 
 
 
   //TODO: Avisos estas seguro? si no
   console.log(id_position);
   let data = {
+    /*//this.pipe.transform(Date.now(), 'dd/MM/yyyy'),
     //title: this.position.title,
-    registryDate: this.pipe.transform(Date.now(), 'dd/MM/yyyy'),
-    testDate: this.pipe.transform(Date.now()+10, 'dd/MM/yyyy'),
-    completionDate: 0,
+    registryDate: "",
+    testDate: "",
+    completionDate: "0",
     result:0,
     position : this.position,
-    candidate : this.candidate,
+    candidate : this.candidate,*/
+
+
+
+      "registryDate": "1970-01-01T00:00:00.000+00:00",
+      "testDate": "1970-01-01T00:00:00.000+00:00",
+      "completionDate": "1970-01-01T00:00:00.000+00:00",
+      "result": '0',
+      "position": {
+          "id": id_position,
+          "title": "java",
+          "description": "crud java"
+      },
+      "candidate": {
+          "id": 1,
+          "candidate_name": "marc",
+          "candidate_surname": "lopez"
+
+  }
 
   };
   console.log(data);
