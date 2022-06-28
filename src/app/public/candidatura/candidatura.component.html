@@ -58,7 +58,9 @@
       <!--Canddaturas disponibles-->
 
 
-      <div class="col-lg-4 mb-5" *ngFor="let position of positions">
+      <div class="col-lg-4 mb-5" *ngFor="let position of positions;let id = index">
+
+
         <div class="card h-100 shadow border-0">
           <img *ngIf="position.id == 1" class="card-img-top"  height="210px"  src="../../../assets/candidaturas/angular.png" alt="..." />
           <img *ngIf="position.id == 11" class="card-img-top"  height="210px" src="../../../assets/candidaturas/java.jpeg" alt="..." />
@@ -69,15 +71,22 @@
 
             <p class="card-text mb-0">{{ position.description }}</p>
           </div>
-          <button *ngIf="logeo == false" type="submit" (click)="createCandidatePosition(position.id, position.title, position.description )"
+
+
+
+          <button *ngIf="idInscritos[id] != position.id"type="submit" (click)="createCandidatePosition(position.id, position.title, position.description )"
             style="width: 87%;font-weight: bolder;margin: 0 10px 10px 24px;"
-            class="btn btn-primary" >Inscribirse</button>
-            <button *ngIf="logeo && idposition == position.id" type="submit"
+            class="btn btn-primary" >Inscribirse {{idInscritos[id]}}</button>
+
+
+
+
+            <button *ngIf=" idInscritos[id] == position.id" type="submit"
             style="width: 87%;font-weight: bolder;margin: 0 10px 10px 24px;"
-            class="btn btn-success" >Inscrito</button>
-            <button *ngIf="logeo && idposition != position.id" type="submit" (click)="createCandidatePosition(position.id, position.title, position.description)"
-            style="width: 87%;font-weight: bolder;margin: 0 10px 10px 24px;"
-            class="btn btn-primary" >Inscribirse</button>
+            class="btn btn-success" >Inscrito {{idInscritos[id]}} </button>
+
+
+
 
           <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
             <div class="d-flex align-items-end justify-content-between">

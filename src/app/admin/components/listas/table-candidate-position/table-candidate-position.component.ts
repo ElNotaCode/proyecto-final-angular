@@ -33,6 +33,7 @@ export class TableCandidatePositionComponent implements OnInit {
       .deleteCandidatePosition(id)
       .subscribe((response) => {
         console.log(response);
+        location.reload();
       });
   }
 

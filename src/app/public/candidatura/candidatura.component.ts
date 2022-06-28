@@ -30,7 +30,7 @@ export class CandidaturaComponent implements OnInit {
   candidate:any;
   position:any;
   idInscritos:any = [];
-
+  i = 0;
   today: Date = new Date();
   pipe = new DatePipe('en-US');
   todayWithPipe:any = null;
@@ -138,6 +138,7 @@ this.candidate = {
         //console log para mirar si se ha mandado bien
         console.log(response);
         this.isCandidatePositionAdded = true;
+        location.reload();
       },
       error: (err) => {
         console.log(err.error.msg);
