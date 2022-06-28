@@ -42,6 +42,12 @@ export class TableHrUserComponent implements OnInit {
     });
   }
 
+  preguntarDelete(id:any){
+    if(confirm("Seguro que quiere eliminar al HrUser ID:" + id + "?")) {
+      this.deleteHrUser(id);
+    }
+  }
+
   editHrUser(id:any, username:any){
     this.id = id;
     this.hrUser.username = username;

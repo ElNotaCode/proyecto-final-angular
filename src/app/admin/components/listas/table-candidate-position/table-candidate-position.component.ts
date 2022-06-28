@@ -35,4 +35,11 @@ export class TableCandidatePositionComponent implements OnInit {
         console.log(response);
       });
   }
+
+  preguntarDelete(id:any){
+    if(confirm("Seguro que quiere eliminar la fila CandidatePosition ID:" + id + "?")) {
+      this.deleteCandidatePosition(id);
+    }
+  }
+
 }

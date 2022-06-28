@@ -45,4 +45,5 @@ export class CandidateService {
   deleteCandidate(id: any): Observable<any> {
     return this.httpClient.delete(`${apiUrl}/${id}`);
   }
+
 }

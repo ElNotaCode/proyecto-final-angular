@@ -104,6 +104,7 @@ export class FormPositionTableComponent implements OnInit {
         next: (response) => {
           //console log para mirar si se ha mandado bien
           console.log(response);
+          alert("Candidato creado con éxito.");
           location.reload();
         },
         error: (err) => {

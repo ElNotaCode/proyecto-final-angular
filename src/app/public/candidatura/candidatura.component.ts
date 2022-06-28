@@ -16,6 +16,15 @@ import { DatePipe } from '@angular/common';
   styleUrls: ['./candidatura.component.css']
 })
 export class CandidaturaComponent implements OnInit {
+
+  buscador: any = "";
+
+  buscar(nombre:string){
+
+
+
+  }
+
   candidatePositions: any;
   positions: any;
   candidate:any;

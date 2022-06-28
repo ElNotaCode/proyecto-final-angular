@@ -80,7 +80,9 @@ export class FormCandidateComponent implements OnInit {
       this.candidateService.createCandidate(data).subscribe({
         next: (response) => {
           console.log(response);
-          this.isCandidateAdded = true;
+          alert("Candidato creado con éxito.");
+          location.reload();
+
         },
         error: (err) => {
           console.log(err.error.msg);

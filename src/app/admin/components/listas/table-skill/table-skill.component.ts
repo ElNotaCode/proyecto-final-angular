@@ -53,6 +53,12 @@ export class TableSkillComponent implements OnInit {
     });
   }
 
+  preguntarDelete(id:any){
+    if(confirm("Seguro que quiere eliminar la skill ID:" + id + "?")) {
+      this.deleteSkill(id);
+    }
+  }
+
   //Edit
   editSkill(id:any, skill_name :any){
     this.id = id;
