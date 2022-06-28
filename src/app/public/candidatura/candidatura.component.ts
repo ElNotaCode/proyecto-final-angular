@@ -101,14 +101,14 @@ this.candidate = {
 
 
 
-      "registryDate": "1970-01-01T00:00:00.000+00:00",
-      "testDate": "1970-01-01T00:00:00.000+00:00",
-      "completionDate": "1970-01-01T00:00:00.000+00:00",
+      "registryDate": "2022-06-28T00:00:00.000+00:00",
+      "testDate": "2022-06-28T00:00:00.000+00:00",
+      "completionDate": "",
       "result": '0',
       "position": {
           "id": id_position,
-          "title": "java",
-          "description": "crud java"
+          "title": name,
+          "description": apellido
       },
       "candidate": {
           "id": 1,
