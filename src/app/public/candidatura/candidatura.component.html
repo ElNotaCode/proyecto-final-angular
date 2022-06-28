@@ -67,7 +67,13 @@
 
             <p class="card-text mb-0">{{ position.description }}</p>
           </div>
-          <button type="submit" (click)="createCandidatePosition(position.id)"
+          <button *ngIf="logeo == false" type="submit" (click)="createCandidatePosition(position.id)"
+            style="width: 87%;font-weight: bolder;margin: 0 10px 10px 24px;"
+            class="btn btn-primary" >Inscribirse</button>
+            <button *ngIf="logeo && idposition == position.id" type="submit"
+            style="width: 87%;font-weight: bolder;margin: 0 10px 10px 24px;"
+            class="btn btn-success" >Inscrito</button>
+            <button *ngIf="logeo && idposition != position.id" type="submit" (click)="createCandidatePosition(position.id)"
             style="width: 87%;font-weight: bolder;margin: 0 10px 10px 24px;"
             class="btn btn-primary" >Inscribirse</button>
 

@@ -59,9 +59,15 @@ export class CandidaturaComponent implements OnInit {
 }
 
 
-
-
+ logeo = false;
+ idposition:any = 0;
  createCandidatePosition(id_position: any) {
+
+  this.logeo = true;
+  this.idposition = id_position;
+  console.log("inscrito");
+  console.log("id"+this.idposition);
+
 
 
   this.position = {
@@ -94,8 +100,9 @@ this.candidate = {
   console.log(data);
 
   //control
-  if (id_position) {
+  if (!data) {
     //mostramos el mensaje de validación
+    console.log("validacion")
     //importante poner el return para que pare la función
     return;
   } else {
