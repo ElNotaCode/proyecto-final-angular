@@ -25,10 +25,17 @@ export class TableHrPositionComponent implements OnInit {
   }
 
   //Delete
-  deleteHrPositionService(id: any) {
+  deleteHrPosition(id: any) {
     //TODO: Avisos estas seguro? si no
     this.hrPositionService.deleteHrPositions(id).subscribe((response) => {
       console.log(response);
     });
   }
+
+  preguntarDelete(id:any){
+    if(confirm("Seguro que quiere eliminar la hr position ID:" + id + "?")) {
+      this.deleteHrPosition(id);
+    }
+  }
+
 }

@@ -36,4 +36,11 @@ export class TableCandidateSkillComponent implements OnInit {
         console.log(response);
       });
   }
+
+  preguntarDelete(id:any){
+    if(confirm("Seguro que quiere eliminar la fila CandidateSkill ID:" + id + "?")) {
+      this.deleteCandidateSkill(id);
+    }
+  }
+
 }

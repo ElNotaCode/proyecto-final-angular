@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../../services/s-auth/auth.service';
 import { TokenStorageService } from '../../services/s-token-storage/token-storage.service';
 
@@ -21,7 +22,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private tokenStorage: TokenStorageService
+    private tokenStorage: TokenStorageService,
+    public router: Router,
   ) {}
 
   ngOnInit(): void {
@@ -43,6 +45,24 @@ export class LoginComponent implements OnInit {
       this.isLoggedIn = true;
       //this.roles = this.tokenStorage.getUser().roles;
     }
+  }
+
+  signinTest(){
+    //mockup mpv
+    if(this.form.username != "" && this.form.password != "" && this.form.validarPassword){
+      this.router.navigate(['/admin/positions']);
+    }else{
+      alert("Introduce un usuario y contraseña.")
+    }
+}
+
+  loginTest(){
+        //mockup mpv
+        if(this.form.username != "" && this.form.password != ""){
+          this.router.navigate(['/admin/positions']);
+        }else{
+          alert("Introduce un usuario y contraseña.")
+        }
   }
 
   login(): void {

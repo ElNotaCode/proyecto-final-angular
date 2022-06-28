@@ -12,7 +12,7 @@
           <i class="fas fa-lock"></i>
           <input type="password" placeholder="Contraseña" name="password" [(ngModel)]="form.password" />
         </div>
-        <input type="submit" value="Entrar" class="btn solid" (click)="login()" />
+        <input type="submit" value="Entrar" class="btn solid" (click)="loginTest()"/>
       </form>
       <!-- Formulario de Registro -->
       <form action="#" class="sign-up-form">
@@ -31,7 +31,7 @@
           <i class="fas fa-lock"></i>
           <input type="password" placeholder="Valida tu Contraseña" name="validarPassword" [(ngModel)]="form.validarPassword" />
         </div>
-        <input type="submit" class="btn" value="Registrarse" />
+        <input type="submit" class="btn" value="Registrarse" (click)="signinTest()" />
       </form>
     </div>
   </div>

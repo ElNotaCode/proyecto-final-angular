@@ -51,4 +51,11 @@ export class TablePositionTableComponent implements OnInit {
       location.reload();
     });
   }
+
+  preguntarDelete(id:any){
+    if(confirm("Seguro que quiere eliminar la posición ID:" + id + "?")) {
+      this.deletePosition(id);
+    }
+  }
+
 }

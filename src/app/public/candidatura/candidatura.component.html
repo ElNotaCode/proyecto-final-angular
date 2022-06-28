@@ -11,10 +11,10 @@
           <div class="row">
             <div class="col-12">
               <input class="form-control form-control-lg" id="buscarCandidatura" type="text"
-                placeholder="Buscar Candidaturas" />
+                placeholder="Buscar Candidaturas" [(ngModel)]="buscador" />
             </div>
             <div class="col-12 mt-3">
-              <button type="button" style="width: 20%;" class="btn btn-primary">Buscar</button> </div>
+              <button type="button" style="width: 20%;" class="btn btn-primary" (click)="buscar(buscador)">Buscar</button> </div>
           </div>
           <!-- Submit success message-->
           <!---->
@@ -49,8 +49,7 @@
       <div class="col-lg-8 col-xl-12">
         <div class="text-center">
           <h2 class="fw-bolder textleft">Candidaturas Disponibles</h2>
-          <p class="lead fw-normal text-muted mb-5 textleft">Lorem ipsum, dolor sit amet consectetur
-            adipisicing elit. Eaque fugit ratione dicta mollitia. Officiis ad.</p>
+          <p class="lead fw-normal text-muted mb-5 textleft">Estas son las candidaturas que hay disponibles actualmente. Registrate para inscribirte.</p>
         </div>
       </div>
     </div>
@@ -100,8 +99,7 @@
       <div class="col-lg-8 col-xl-12">
         <div class="text-center">
           <h2 class="fw-bolder textleft">Mis Candidaturas</h2>
-          <p class="lead fw-normal text-muted mb-5 textleft">Lorem ipsum, dolor sit amet consectetur
-            adipisicing elit. Eaque fugit ratione dicta mollitia. Officiis ad.</p>
+          <p class="lead fw-normal text-muted mb-5 textleft">Consulta tus candidaturas.</p>
         </div>
       </div>
     </div>
@@ -139,9 +137,6 @@
   </div>
 </section>
 
-
-
-<!-- Testimonial section-->
 <div class="py-5 bg-light  bg-blue">
   <div class="container px-5 my-5">
     <div class="row gx-5 justify-content-center">

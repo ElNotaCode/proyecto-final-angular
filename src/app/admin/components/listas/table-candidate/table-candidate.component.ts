@@ -60,5 +60,9 @@ export class TableCandidateComponent implements OnInit {
     });
   }
 
-  //TODO: Read
+  preguntarDelete(id:any){
+    if(confirm("Seguro que quiere eliminar al Candidate ID:" + id + "?")) {
+      this.deleteCandidate(id);
+    }
+  }
 }
