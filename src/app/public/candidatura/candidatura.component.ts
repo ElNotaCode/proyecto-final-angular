@@ -20,6 +20,7 @@ export class CandidaturaComponent implements OnInit {
   positions: any;
   candidate:any;
   position:any;
+  idInscritos:any = [];
 
   today: Date = new Date();
   pipe = new DatePipe('en-US');
@@ -43,7 +44,15 @@ export class CandidaturaComponent implements OnInit {
       .listCandidatePosition()
       .subscribe((candidatePositions: any) => {
         this.candidatePositions = candidatePositions;
+
         console.log(this.candidatePositions);
+
+        for (let index = 0; index < candidatePositions.length; index++) {
+
+          this.idInscritos[index] = this.candidatePositions[index].position.id
+        }
+
+
       });
   }
 
@@ -88,18 +97,7 @@ this.candidate = {
 
 
   //TODO: Avisos estas seguro? si no
-  console.log(id_position);
   let data = {
-    /*//this.pipe.transform(Date.now(), 'dd/MM/yyyy'),
-    //title: this.position.title,
-    registryDate: "",
-    testDate: "",
-    completionDate: "0",
-    result:0,
-    position : this.position,
-    candidate : this.candidate,*/
-
-
 
       "registryDate": "2022-06-28T00:00:00.000+00:00",
       "testDate": "2022-06-28T00:00:00.000+00:00",
