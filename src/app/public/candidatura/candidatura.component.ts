@@ -50,9 +50,8 @@ export class CandidaturaComponent implements OnInit {
         for (let index = 0; index < candidatePositions.length; index++) {
 
           this.idInscritos[index] = this.candidatePositions[index].position.id
+
         }
-
-
       });
   }
 
