@@ -6,27 +6,7 @@
       <div class="col-xl-6">
         <div class="text-center text-white">
           <!-- Page heading-->
-          <h1 class="mb-5">Buscar candidaturas</h1>
-          <!-- Email address input-->
-          <div class="row">
-            <div class="col-12">
-              <input class="form-control form-control-lg" id="buscarCandidatura" type="text"
-                placeholder="Buscar Candidaturas" [(ngModel)]="buscador" />
-            </div>
-            <div class="col-12 mt-3">
-              <button type="button" style="width: 20%;" class="btn btn-primary" (click)="buscar(buscador)">Buscar</button> </div>
-          </div>
-          <div class="d-none" id="submitSuccessMessage">
-            <div class="text-center mb-3">
-              <div class="fw-bolder">Form submission successful!</div>
-              <p>To activate this form, sign up at</p>
-              <a class="text-white"
-                href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-            </div>
-          </div>
-          <div class="d-none" id="submitErrorMessage">
-            <div class="text-center text-danger mb-3">Error sending message!</div>
-          </div>
+          <h1 class="mb-5">Candidaturas</h1>
         </div>
       </div>
     </div>
@@ -41,33 +21,74 @@
       <div class="col-lg-8 col-xl-12">
         <div class="text-center">
           <h2 class="fw-bolder textleft">Candidaturas Disponibles</h2>
-          <p class="lead fw-normal text-muted mb-5 textleft">Estas son las candidaturas que hay disponibles actualmente. Registrate para inscribirte.</p>
+          <p class="lead fw-normal text-muted mb-5 textleft">
+            Estas son las candidaturas que hay disponibles actualmente.
+            Registrate para inscribirte.
+          </p>
         </div>
       </div>
     </div>
 
     <div class="row gx-5">
       <!--Canddaturas disponibles-->
-      <div class="col-lg-4 mb-5" *ngFor="let position of positions;let id = index">
+      <div
+        class="col-lg-4 mb-5"
+        *ngFor="let position of positions; let id = index"
+      >
         <div class="card h-100 shadow border-0">
-          <img *ngIf="position.id == 1" class="card-img-top"  height="210px"  src="../../../assets/candidaturas/angular.png" alt="..." />
-          <img *ngIf="position.id == 11" class="card-img-top"  height="210px" src="../../../assets/candidaturas/java.jpeg" alt="..." />
-          <img *ngIf="position.id == 21" class="card-img-top" height="210px" src="../../../assets/candidaturas/NET.webp" alt="..." />
+          <img
+            *ngIf="position.id == 1"
+            class="card-img-top"
+            height="210px"
+            src="../../../assets/candidaturas/angular.png"
+            alt="..."
+          />
+          <img
+            *ngIf="position.id == 11"
+            class="card-img-top"
+            height="210px"
+            src="../../../assets/candidaturas/java.jpeg"
+            alt="..."
+          />
+          <img
+            *ngIf="position.id == 21"
+            class="card-img-top"
+            height="210px"
+            src="../../../assets/candidaturas/NET.webp"
+            alt="..."
+          />
           <div class="card-body p-4">
-              <h5 class="card-title mb-3">{{ position.title }}</h5>
+            <h5 class="card-title mb-3">{{ position.title }}</h5>
             <p class="card-text mb-0">{{ position.description }}</p>
           </div>
-          <button *ngIf="idInscritos[id] != position.id"type="submit" (click)="createCandidatePosition(position.id, position.title, position.description )"
-            style="width: 87%;font-weight: bolder;margin: 0 10px 10px 24px;"
-            class="btn btn-primary" >Inscribirse {{idInscritos[id]}}</button>
-            <button *ngIf=" idInscritos[id] == position.id" type="submit"
-            style="width: 87%;font-weight: bolder;margin: 0 10px 10px 24px;"
-            class="btn btn-success" >Inscrito {{idInscritos[id]}} </button>
+          <button
+            *ngIf="idInscritos[id] != position.id"
+            type="submit"
+            (click)="
+              createCandidatePosition(
+                position.id,
+                position.title,
+                position.description
+              )
+            "
+            style="width: 87%; font-weight: bolder; margin: 0 10px 10px 24px"
+            class="btn btn-primary"
+          >
+            Inscribirse {{ idInscritos[id] }}
+          </button>
+          <button
+            *ngIf="idInscritos[id] == position.id"
+            type="submit"
+            style="width: 87%; font-weight: bolder; margin: 0 10px 10px 24px"
+            class="btn btn-success"
+          >
+            Inscrito {{ idInscritos[id] }}
+          </button>
           <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
             <div class="d-flex align-items-end justify-content-between">
               <div class="d-flex align-items-center">
                 <div class="small">
-                  <div class="text-muted">{{todayWithPipe}}</div>
+                  <div class="text-muted">{{ todayWithPipe }}</div>
                 </div>
               </div>
             </div>
@@ -85,7 +106,9 @@
       <div class="col-lg-8 col-xl-12">
         <div class="text-center">
           <h2 class="fw-bolder textleft">Mis Candidaturas</h2>
-          <p class="lead fw-normal text-muted mb-5 textleft">Consulta tus candidaturas.</p>
+          <p class="lead fw-normal text-muted mb-5 textleft">
+            Consulta tus candidaturas.
+          </p>
         </div>
       </div>
     </div>
@@ -94,25 +117,59 @@
 
       <div class="col-lg-4 mb-5" *ngFor="let candPost of candidatePositions">
         <div class="card h-100 shadow border-0">
-          <img *ngIf="candPost.position.id == 1" class="card-img-top"  height="210px"  src="../../../assets/candidaturas/angular.png" alt="..." />
-          <img *ngIf="candPost.position.id  == 11" class="card-img-top"  height="210px" src="../../../assets/candidaturas/java.jpeg" alt="..." />
-          <img *ngIf="candPost.position.id  == 21" class="card-img-top" height="210px" src="../../../assets/candidaturas/NET.webp" alt="..." />
+          <img
+            *ngIf="candPost.position.id == 1"
+            class="card-img-top"
+            height="210px"
+            src="../../../assets/candidaturas/angular.png"
+            alt="..."
+          />
+          <img
+            *ngIf="candPost.position.id == 11"
+            class="card-img-top"
+            height="210px"
+            src="../../../assets/candidaturas/java.jpeg"
+            alt="..."
+          />
+          <img
+            *ngIf="candPost.position.id == 21"
+            class="card-img-top"
+            height="210px"
+            src="../../../assets/candidaturas/NET.webp"
+            alt="..."
+          />
           <div class="card-body p-4">
-            <div class="badge bg-success bg-gradient rounded-pill mb-2" *ngIf="candPost.result>=5">Apto</div>
-            <div class="badge bg-danger bg-gradient rounded-pill mb-2" *ngIf="candPost.result<5 && candPost.result!=0 ">NoApto</div>
-            <div class="badge bg-primary bg-gradient rounded-pill mb-2" *ngIf="candPost.result==0">Pendiente</div>
+            <div
+              class="badge bg-success bg-gradient rounded-pill mb-2"
+              *ngIf="candPost.result >= 5"
+            >
+              Apto
+            </div>
+            <div
+              class="badge bg-danger bg-gradient rounded-pill mb-2"
+              *ngIf="candPost.result < 5 && candPost.result != 0"
+            >
+              NoApto
+            </div>
+            <div
+              class="badge bg-primary bg-gradient rounded-pill mb-2"
+              *ngIf="candPost.result == 0"
+            >
+              Pendiente
+            </div>
             <a class="text-decoration-none link-dark stretched-link">
-              <h5 class="card-title mb-3">{{candPost.position.title}}</h5>
+              <h5 class="card-title mb-3">{{ candPost.position.title }}</h5>
             </a>
-            <p class="card-text mb-0">{{candPost.position.description}}</p>
+            <p class="card-text mb-0">{{ candPost.position.description }}</p>
           </div>
           <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
             <div class="d-flex align-items-end justify-content-between">
               <div class="d-flex align-items-center">
-
                 <div class="small">
-                  <div class="text-muted"> RegistryDate: {{candPost.registryDate}} &middot; TestDate:
-                    {{candPost.testDate}}</div>
+                  <div class="text-muted">
+                    RegistryDate: {{ candPost.registryDate }} &middot; TestDate:
+                    {{ candPost.testDate }}
+                  </div>
                 </div>
               </div>
             </div>
@@ -123,16 +180,19 @@
   </div>
 </section>
 
-<div class="py-5 bg-light  bg-blue">
+<div class="py-5 bg-light bg-blue">
   <div class="container px-5 my-5">
     <div class="row gx-5 justify-content-center">
       <div class="col-lg-10 col-xl-7">
         <div class="text-center">
           <div class="d-flex align-items-center justify-content-center">
-            <img class="card-img-top" src="../../../assets/imgHome/tsystem.png" style="width: 30px;" alt="tsystem" />
-            <div class="fw-bold">&nbsp;&nbsp;
-              System
-            </div>
+            <img
+              class="card-img-top"
+              src="../../../assets/imgHome/tsystem.png"
+              style="width: 30px"
+              alt="tsystem"
+            />
+            <div class="fw-bold">&nbsp;&nbsp; System</div>
           </div>
         </div>
       </div>
@@ -141,56 +201,147 @@
 </div>
 <app-footer></app-footer>
 <!-- Login oculto -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog signin_dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <img src="../../../assets/tyst.png" width="50px" height="100px" alt="logoWeb">
+        <img
+          src="../../../assets/tyst.png"
+          width="50px"
+          height="100px"
+          alt="logoWeb"
+        />
       </div>
       <div class="modal-body signin_modal">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#signup" type="button"
-              role="tab" aria-controls="home" aria-selected="true">Regístrate</button>
+            <button
+              class="nav-link active"
+              id="home-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#signup"
+              type="button"
+              role="tab"
+              aria-controls="home"
+              aria-selected="true"
+            >
+              Regístrate
+            </button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#signin" type="button"
-              role="tab" aria-controls="profile" aria-selected="false">Inicia Sesión</button>
+            <button
+              class="nav-link"
+              id="profile-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#signin"
+              type="button"
+              role="tab"
+              aria-controls="profile"
+              aria-selected="false"
+            >
+              Inicia Sesión
+            </button>
           </li>
         </ul>
         <div class="tab-content signin_tab" id="myTabContent">
-          <div class="tab-pane fade show active" id="signup" role="tabpanel" aria-labelledby="home-tab">
+          <div
+            class="tab-pane fade show active"
+            id="signup"
+            role="tabpanel"
+            aria-labelledby="home-tab"
+          >
             <form>
               <div class="mb-3">
-                <input type="text" class="form-control" id="exampleInputText1" aria-describedby="textHelp"
-                  placeholder="Usuario">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputText1"
+                  aria-describedby="textHelp"
+                  placeholder="Usuario"
+                />
               </div>
               <div class="mb-3">
-                <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                  placeholder="Contraseña">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  placeholder="Contraseña"
+                />
               </div>
               <div class="mb-3">
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Repetir contraseña">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                  placeholder="Repetir contraseña"
+                />
               </div>
-              <button type="submit" class="btn btn-primary btn-block btn-width">Crear Cuenta</button>
-              <p class="signin_link">¿Ya tienes una cuenta? <a id="profile-tab" data-bs-toggle="tab"
-                  data-bs-target="#signin" type="button" role="tab" aria-controls="profile" aria-selected="false">Inicia
-                  Sesión</a></p>
+              <button type="submit" class="btn btn-primary btn-block btn-width">
+                Crear Cuenta
+              </button>
+              <p class="signin_link">
+                ¿Ya tienes una cuenta?
+                <a
+                  id="profile-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#signin"
+                  type="button"
+                  role="tab"
+                  aria-controls="profile"
+                  aria-selected="false"
+                  >Inicia Sesión</a
+                >
+              </p>
             </form>
           </div>
-          <div class="tab-pane fade" id="signin" role="tabpanel" aria-labelledby="profile-tab">
+          <div
+            class="tab-pane fade"
+            id="signin"
+            role="tabpanel"
+            aria-labelledby="profile-tab"
+          >
             <form>
               <div class="mb-3">
-                <input type="text" class="form-control" id="exampleInputText1" aria-describedby="textHelp"
-                  placeholder="Usuario">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputText1"
+                  aria-describedby="textHelp"
+                  placeholder="Usuario"
+                />
               </div>
               <div class="">
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
-              </div><br />
-              <button type="submit" class="btn btn-primary btn-block btn-width">Iniciar Sesión</button>
-              <p class="signin_link">¿Nuevo en Inter·Views? <a id="home-tab" data-bs-toggle="tab"
-                  data-bs-target="#signup" type="button" role="tab" aria-controls="home"
-                  aria-selected="true">Regístrate</a></p>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                  placeholder="Contraseña"
+                />
+              </div>
+              <br />
+              <button type="submit" class="btn btn-primary btn-block btn-width">
+                Iniciar Sesión
+              </button>
+              <p class="signin_link">
+                ¿Nuevo en Inter·Views?
+                <a
+                  id="home-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#signup"
+                  type="button"
+                  role="tab"
+                  aria-controls="home"
+                  aria-selected="true"
+                  >Regístrate</a
+                >
+              </p>
             </form>
           </div>
         </div>
