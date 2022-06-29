@@ -6,7 +6,9 @@
     <form>
       <!--TEXT TITULO-->
       <div class="form-group row my-3">
-        <label for="tituloPosition" class="col-sm-2 col-form-label align-self-center textos"
+        <label
+          for="tituloPosition"
+          class="col-sm-2 col-form-label align-self-center textos"
           >Título:</label
         >
         <div class="col-sm-10 align-self-center">
@@ -17,7 +19,7 @@
             name="position.tituloPosition"
             placeholder="Introduce un título"
             [(ngModel)]="position.title"
-            value="{{position.title}}"
+            value="{{ position.title }}"
           />
         </div>
       </div>
@@ -30,7 +32,9 @@
       </div>
       <!--TEXTAREA DESCRIPCIÓN-->
       <div class="form-group row my-3">
-        <label for="textArea" class="col-sm-2 col-form-label align-self-center textos"
+        <label
+          for="textArea"
+          class="col-sm-2 col-form-label align-self-center textos"
           >Descripción</label
         >
         <div class="col-sm-10 align-self-center">
@@ -41,7 +45,7 @@
             rows="3"
             placeholder="Introduce tu mensaje."
             [(ngModel)]="position.description"
-            value="{{position.description}}"
+            value="{{ position.description }}"
           ></textarea>
         </div>
       </div>
@@ -53,9 +57,21 @@
         </div>
       </div>
       <!--BUTTON-->
-      <button class="btn btn-primary mt-4" *ngIf="isEdit" (click)="editPosition()">Editar</button>
-      <button class="btn btn-danger mt-4" *ngIf="isEdit" (click)="cancelar()">Cancelar</button>
-      <button class="btn btn-primary mt-4" *!ngIf="isEdit" (click)="addPosition()">
+      <button
+        class="btn btn-primary mt-4"
+        *ngIf="isEdit"
+        (click)="editPosition()"
+      >
+        Editar
+      </button>
+      <button class="btn btn-danger mt-4" *ngIf="isEdit" (click)="cancelar()">
+        Cancelar
+      </button>
+      <button
+        class="btn btn-primary mt-4"
+        *ngIf="!isEdit"
+        (click)="addPosition()"
+      >
         Enviar
       </button>
     </form>
