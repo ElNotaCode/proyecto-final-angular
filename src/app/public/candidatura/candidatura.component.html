@@ -87,43 +87,40 @@
             <p class="card-text mb-0">{{ position.description }}</p>
           </div>
           <div *ngIf="estasLogeado">
-
-          <button
-            *ngIf="idInscritos[id] != position.id"
-            type="submit"
-            (click)="
-              createCandidatePosition(
-                position.id,
-                position.title,
-                position.description
-              )
-            "
-            style="width: 87%; font-weight: bolder; margin: 0 10px 10px 24px"
-            class="btn btn-primary"
-          >
-            Inscribirse
-          </button>
-          <button
-            *ngIf="idInscritos[id] == position.id"
-            type="submit"
-            style="width: 87%; font-weight: bolder; margin: 0 10px 10px 24px"
-            class="btn btn-success"
-          >
-            Inscrito
-          </button>
+            <button
+              *ngIf="idInscritos[id] != position.id"
+              type="submit"
+              (click)="
+                createCandidatePosition(
+                  position.id,
+                  position.title,
+                  position.description
+                )
+              "
+              style="width: 87%; font-weight: bolder; margin: 0 10px 10px 24px"
+              class="btn btn-primary"
+            >
+              Inscribirse
+            </button>
+            <button
+              *ngIf="idInscritos[id] == position.id"
+              type="submit"
+              style="width: 87%; font-weight: bolder; margin: 0 10px 10px 24px"
+              class="btn btn-success"
+            >
+              Inscrito
+            </button>
           </div>
           <div *ngIf="!estasLogeado">
-
             <button
-
               style="width: 87%; font-weight: bolder; margin: 0 10px 10px 24px"
-              class="btn btn-primary"   data-bs-toggle="modal"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
               data-bs-target="#exampleModal"
             >
               Unete
             </button>
-
-            </div>
+          </div>
           <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
             <div class="d-flex align-items-end justify-content-between">
               <div class="d-flex align-items-center">
@@ -140,7 +137,7 @@
 </section>
 
 <!-- Blog preview section-->
-<section  *ngIf="estasLogeado"  class="py-5">
+<section *ngIf="estasLogeado" class="py-5">
   <div class="container px-5 my-5">
     <div class="row gx-5 justify-content-center">
       <div class="col-lg-8 col-xl-12">
@@ -306,6 +303,24 @@
                   placeholder="Usuario"
                   name="usuario"
                   [(ngModel)]="form.username"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputText1"
+                  aria-describedby="textHelp"
+                  placeholder="Nombre"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputText1"
+                  aria-describedby="textHelp"
+                  placeholder="Apellidos"
                 />
               </div>
               <div class="mb-3">

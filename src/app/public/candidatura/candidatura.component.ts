@@ -51,7 +51,9 @@ export class CandidaturaComponent implements OnInit {
     if (
       (this.form.username == this.tempData.username &&
         this.form.password == this.tempData.password) ||
-      (this.form.username == 'emartorell' && this.form.password == 'password')
+      (this.form.username == 'emartorell' &&
+        this.form.password == 'password') ||
+      (this.form.username == 'marc' && this.form.password == 'password')
     ) {
       //mandamos an nav la info
       this.estasLogeado = true;
@@ -165,7 +167,8 @@ export class CandidaturaComponent implements OnInit {
           //console log para mirar si se ha mandado bien
           console.log(response);
           this.isCandidatePositionAdded = true;
-          location.reload();
+          //location.reload();
+          //recarga con router module
         },
         error: (err) => {
           console.log(err.error.msg);
