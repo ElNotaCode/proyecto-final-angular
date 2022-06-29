@@ -18,7 +18,6 @@ export class AppComponent {
 
   constructor(private tokenStorageService: TokenStorageService) {}
 
-  //TODO: Preguntar si no se importa el onInit
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
 

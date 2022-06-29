@@ -1,10 +1,22 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light colortxt">
   <div class="container px-5">
-    <img src="../../../assets/tyst.png" alt=""  height="24" class="d-inline-block align-text-top">
+    <img
+      src="../../../assets/tyst.png"
+      alt=""
+      height="24"
+      class="d-inline-block align-text-top"
+    />
     <a class="navbar-brand" href="index.html">&nbsp;&nbsp; INTER·VIEWS</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -18,12 +30,30 @@
         <li class="nav-item">
           <a class="nav-link nav-bold" routerLink="/about">ABOUT</a>
         </li>
-        <div class="mx-1">
-          <a class="btn bg-btn-white nav-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">UNETE</a>
+        <div class="mx-1" *ngIf="!estasLogeado">
+          <a
+            class="btn bg-btn-white nav-bold"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            >UNETE</a
+          >
         </div>
         <br />
-        <div class="mx-1">
-          <a class="btn bg-btn-blue nav-bold"  data-bs-toggle="modal" data-bs-target="#exampleModal">LOGIN</a>
+        <div class="mx-1" *ngIf="!estasLogeado">
+          <a
+            class="btn bg-btn-blue nav-bold"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            >LOGIN</a
+          >
+        </div>
+        <div class="mx-1" *ngIf="esAdmin">
+          <a class="btn btn-info nav-bold" routerLink="/admin/positions"
+            >BACKOFFICE</a
+          >
+        </div>
+        <div class="mx-1" *ngIf="estasLogeado">
+          <a class="btn btn-danger nav-bold">LOGOUT</a>
         </div>
       </ul>
     </div>
