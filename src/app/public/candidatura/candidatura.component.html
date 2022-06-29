@@ -86,6 +86,7 @@
             <h5 class="card-title mb-3">{{ position.title }}</h5>
             <p class="card-text mb-0">{{ position.description }}</p>
           </div>
+          <div *ngIf="estasLogeado">
 
           <button
             *ngIf="idInscritos[id] != position.id"
@@ -110,6 +111,19 @@
           >
             Inscrito
           </button>
+          </div>
+          <div *ngIf="!estasLogeado">
+
+            <button
+
+              style="width: 87%; font-weight: bolder; margin: 0 10px 10px 24px"
+              class="btn btn-primary"   data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              Unete
+            </button>
+
+            </div>
           <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
             <div class="d-flex align-items-end justify-content-between">
               <div class="d-flex align-items-center">
@@ -126,7 +140,7 @@
 </section>
 
 <!-- Blog preview section-->
-<section class="py-5">
+<section  *ngIf="estasLogeado"  class="py-5">
   <div class="container px-5 my-5">
     <div class="row gx-5 justify-content-center">
       <div class="col-lg-8 col-xl-12">
